@@ -16,16 +16,20 @@ body {
   overflow: hidden;
 }
 
-nav {
+.settings-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   column-gap: 2rem;
   padding-top: 0.5rem;
   background-color: var(--background-colour);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-nav div {
+.settings-box div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,8 +44,15 @@ nav div span {
 
 .navbar-control-box {
   border-top: 1px solid var(--foreground-colour);
-  flex: 0 0 100%;
   text-align: center;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar-control-box i {
+  cursor: pointer;
 }
 
 main {
@@ -73,4 +84,8 @@ h1 {
 p {
   margin: 0;
   font-size: 0.7rem;
+}
+
+.hidden {
+  display: none;
 }
