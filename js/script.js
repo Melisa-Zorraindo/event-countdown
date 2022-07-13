@@ -15,12 +15,12 @@ const backgroundButton = document.querySelector(".background-edition-button");
 const headlineButton = document.querySelector(".headline-edition-button");
 const countDownButton = document.querySelector(".countdown-edition-button");
 const buttonDisplay = document.querySelector(".button-visibility-container");
-const eyeIcon = document.querySelector("#eye-icon");
-
 let buttons = [backgroundButton, headlineButton, countDownButton];
+const eyeIcon = document.querySelector("#eye-icon");
+const legend = document.querySelector("#visibility-para");
 
 buttonDisplay.addEventListener("click", () => {
-  toggleButtonVisibility(buttons, eyeIcon);
+  toggleButtonVisibility(buttons, eyeIcon, legend);
 });
 
 // ---------- Countdown logic ---------- //
@@ -55,4 +55,4 @@ function countDown() {
   }
 }
 
-// setInterval(countDown, 1000);
+setInterval(countDown, 1000);
