@@ -3,7 +3,7 @@ import { switchThemes } from "./functionality/themes.js";
 
 // ---------- SETTINGS ---------- //
 const settingsButton = document.querySelector(".settings-button");
-const modalWindow = document.querySelector(".modal-window");
+const modalWindow = document.querySelector(".settings-menu");
 const countdownContainer = document.querySelector(".container");
 settingsButton.addEventListener("click", displaySettings);
 

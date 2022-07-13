@@ -93,20 +93,43 @@ button:hover {
 
 /* ---------- Modal windows ---------- */
 
-.modal-window {
+.settings-menu {
   border-top: 1px solid var(--foreground-colour);
   padding: 0 2rem;
+  position: relative;
+  height: 10rem;
 }
 
-.modal-window i {
+.settings-menu i {
   font-size: 1rem;
 }
 
-.button-visibility-container,
-.mode-container {
+.mode-container,
+.button-visibility-container {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin: 2rem 0;
   cursor: pointer;
+  position: absolute;
+  left: -50%;
+  animation: slide-in 0.5s ease-in-out forwards;
+}
+
+.button-visibility-container {
+  bottom: 0;
+}
+
+@keyframes slide-in {
+  0% {
+    font-style: italic;
+  }
+
+  50% {
+    font-style: italic;
+  }
+
+  100% {
+    left: 2rem;
+  }
 }
