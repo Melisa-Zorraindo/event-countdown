@@ -1,18 +1,3 @@
-// --------- Menu ---------- //
-import { hideMenu, displayMenu } from "./menu.js";
-const hideMenuButton = document.querySelector(".fa-caret-up");
-const displayMenuButton = document.querySelector(".fa-caret-down");
-const navBar = document.querySelector(".settings-box");
-const navBarIcon = document.querySelector(".navbar-control-box");
-
-hideMenuButton.addEventListener("click", () => {
-  hideMenu(displayMenuButton, hideMenuButton, navBar, navBarIcon);
-});
-
-displayMenuButton.addEventListener("click", () => {
-  displayMenu(displayMenuButton, hideMenuButton, navBar, navBarIcon);
-});
-
 // ---------- Countdown logic ---------- //
 const arrivalDate = new Date("09/28/2022");
 const second = 1000;

@@ -8,51 +8,14 @@
 :root {
   --background-colour: #fbfcf8;
   --foreground-colour: #3c3c3c;
+  --background-icons: #fafafa;
+  --shadow-icons: #aaa;
 }
 
 body {
   font: 2rem "Baloo 2", cursive;
   color: var(--foreground-colour);
   overflow: hidden;
-}
-
-.settings-box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  column-gap: 2rem;
-  padding-top: 0.5rem;
-  background-color: var(--background-colour);
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-.settings-box div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.25rem;
-  cursor: pointer;
-}
-
-nav div span {
-  font-size: 0.75rem;
-}
-
-.navbar-control-box {
-  border-top: 1px solid var(--foreground-colour);
-  text-align: center;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-.navbar-control-box i {
-  cursor: pointer;
 }
 
 main {
@@ -68,9 +31,24 @@ main {
   align-items: center;
 }
 
+.background-edition-button {
+  align-self: flex-start;
+}
+
+.heading-container,
+.timer-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
 h1 {
   font-size: 3rem;
   text-align: center;
+}
+
+.timer-container {
+  align-items: flex-end;
 }
 
 .timer {
@@ -84,6 +62,23 @@ h1 {
 p {
   margin: 0;
   font-size: 0.7rem;
+}
+
+button {
+  background-color: var(--background-icons);
+  border: none;
+  border-radius: 3px;
+  color: var(--foreground-colour);
+  padding: 0.35rem;
+  transition: all 0.5s ease-in-out;
+  box-shadow: -3px 3px 6px var(--shadow-icons);
+  position: relative;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: none;
+  transform: scale(2);
 }
 
 .hidden {
