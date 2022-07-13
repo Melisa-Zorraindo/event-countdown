@@ -1,3 +1,4 @@
+import { toggleButtonVisibility } from "./buttonVisibility.js";
 // ---------- Settings ---------- //
 const settingsButton = document.querySelector(".settings-button");
 const modalWindow = document.querySelector(".modal-window");
@@ -8,6 +9,19 @@ function displaySettings() {
   modalWindow.classList.toggle("hidden");
   countdownContainer.classList.toggle("hidden");
 }
+
+// ----- Button Visibility ----- //
+const backgroundButton = document.querySelector(".background-edition-button");
+const headlineButton = document.querySelector(".headline-edition-button");
+const countDownButton = document.querySelector(".countdown-edition-button");
+const buttonDisplay = document.querySelector(".button-visibility-container");
+const eyeIcon = document.querySelector("#eye-icon");
+
+let buttons = [backgroundButton, headlineButton, countDownButton];
+
+buttonDisplay.addEventListener("click", () => {
+  toggleButtonVisibility(buttons, eyeIcon);
+});
 
 // ---------- Countdown logic ---------- //
 const arrivalDate = new Date("09/28/2022");

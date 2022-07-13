@@ -12,8 +12,16 @@
   --shadow-icons: #aaa;
 }
 
+.dark-mode {
+  --background-colour: #3c3c3c;
+  --foreground-colour: #fbfcf8;
+  --background-icons: #424242;
+  --shadow-icons: #fafafa;
+}
+
 body {
   font: 2rem "Baloo 2", cursive;
+  background-color: var(--background-colour);
   color: var(--foreground-colour);
   overflow: hidden;
 }
