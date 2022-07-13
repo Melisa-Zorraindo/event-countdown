@@ -1,4 +1,5 @@
-import { toggleButtonVisibility } from "./buttonVisibility.js";
+import { toggleButtonVisibility } from "./functionality/buttonVisibility.js";
+import { switchThemes } from "./functionality/themes.js";
 // ---------- Settings ---------- //
 const settingsButton = document.querySelector(".settings-button");
 const modalWindow = document.querySelector(".modal-window");
@@ -9,6 +10,14 @@ function displaySettings() {
   modalWindow.classList.toggle("hidden");
   countdownContainer.classList.toggle("hidden");
 }
+// ----- Themes ----- //
+const modeContainer = document.querySelector(".mode-container");
+const darkModeIcon = document.querySelector(".fa-moon");
+const lightModeIcon = document.querySelector(".fa-sun");
+let themeLegend = document.querySelector("#theme-para");
+modeContainer.addEventListener("click", () => {
+  switchThemes(darkModeIcon, lightModeIcon, themeLegend);
+});
 
 // ----- Button Visibility ----- //
 const backgroundButton = document.querySelector(".background-edition-button");

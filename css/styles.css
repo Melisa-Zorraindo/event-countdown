@@ -24,6 +24,7 @@ body {
   background-color: var(--background-colour);
   color: var(--foreground-colour);
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
 header {
