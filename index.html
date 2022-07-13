@@ -19,7 +19,25 @@
     <title>Event countdown</title>
   </head>
   <body>
+    <header>
+      <button aria-label="settings" class="settings-button">
+        <span class="sr-only">settings</span>
+        <i class="fas fa-cog"></i>
+      </button>
+    </header>
     <main>
+      <div class="modal-window hidden">
+        <div class="mode-container">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun hidden"></i>
+          <p>dark mode</p>
+        </div>
+        <div class="button-visibility-container">
+          <i class="fas fa-eye"></i>
+          <i class="fas fa-eye-slash hidden"></i>
+          <p>hide buttons</p>
+        </div>
+      </div>
       <div class="container">
         <button aria-label="edit background" class="background-edition-button">
           <span class="sr-only">edit background</span>

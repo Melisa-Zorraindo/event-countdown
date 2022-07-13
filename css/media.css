@@ -1,14 +1,6 @@
 @media screen and (min-width: 500px) {
   body {
-    font: 8vmin "Baloo 2", cursive;
-  }
-
-  nav div {
-    font-size: 4vmin;
-  }
-
-  nav div span {
-    font-size: 2vmin;
+    font-size: 8vmin;
   }
 
   h1 {

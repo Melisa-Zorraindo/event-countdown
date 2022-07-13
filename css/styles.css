@@ -18,21 +18,19 @@ body {
   overflow: hidden;
 }
 
-main {
+header {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  margin-right: 1rem;
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-}
-
-.background-edition-button {
-  align-self: flex-start;
+  height: 90vh;
 }
 
 .heading-container,
@@ -72,7 +70,6 @@ button {
   padding: 0.35rem;
   transition: all 0.5s ease-in-out;
   box-shadow: -3px 3px 6px var(--shadow-icons);
-  position: relative;
 }
 
 button:hover {
@@ -83,4 +80,24 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+/* ---------- Modal windows ---------- */
+
+.modal-window {
+  border-top: 1px solid var(--foreground-colour);
+  padding: 0 2rem;
+}
+
+.modal-window i {
+  font-size: 1rem;
+}
+
+.button-visibility-container,
+.mode-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  cursor: pointer;
 }

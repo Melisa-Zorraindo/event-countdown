@@ -1,3 +1,14 @@
+// ---------- Settings ---------- //
+const settingsButton = document.querySelector(".settings-button");
+const modalWindow = document.querySelector(".modal-window");
+const countdownContainer = document.querySelector(".container");
+settingsButton.addEventListener("click", displaySettings);
+
+function displaySettings() {
+  modalWindow.classList.toggle("hidden");
+  countdownContainer.classList.toggle("hidden");
+}
+
 // ---------- Countdown logic ---------- //
 const arrivalDate = new Date("09/28/2022");
 const second = 1000;
