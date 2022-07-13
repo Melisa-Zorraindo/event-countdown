@@ -1,6 +1,7 @@
 import { toggleButtonVisibility } from "./functionality/buttonVisibility.js";
 import { switchThemes } from "./functionality/themes.js";
-// ---------- Settings ---------- //
+
+// ---------- SETTINGS ---------- //
 const settingsButton = document.querySelector(".settings-button");
 const modalWindow = document.querySelector(".modal-window");
 const countdownContainer = document.querySelector(".container");
@@ -14,9 +15,10 @@ function displaySettings() {
 const modeContainer = document.querySelector(".mode-container");
 const darkModeIcon = document.querySelector(".fa-moon");
 const lightModeIcon = document.querySelector(".fa-sun");
+let themeIcons = [darkModeIcon, lightModeIcon];
 let themeLegend = document.querySelector("#theme-para");
 modeContainer.addEventListener("click", () => {
-  switchThemes(darkModeIcon, lightModeIcon, themeLegend);
+  switchThemes(themeIcons, themeLegend);
 });
 
 // ----- Button Visibility ----- //
@@ -32,7 +34,7 @@ buttonDisplay.addEventListener("click", () => {
   toggleButtonVisibility(buttons, eyeIcon, legend);
 });
 
-// ---------- Countdown logic ---------- //
+// ---------- COUNTDOWN LOGIC ---------- //
 const arrivalDate = new Date("09/28/2022");
 const second = 1000;
 const minute = second * 60;

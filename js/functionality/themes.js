@@ -1,7 +1,8 @@
-export function switchThemes(darkModeIcon, lightModeIcon, themeLegend) {
+export function switchThemes(themeIcons, themeLegend) {
   document.body.classList.toggle("dark-mode");
-  darkModeIcon.classList.toggle("hidden");
-  lightModeIcon.classList.toggle("hidden");
+  themeIcons.forEach((icon) => {
+    icon.classList.toggle("hidden");
+  });
   themeLegend.innerHTML === "light mode"
     ? (themeLegend.innerHTML = "dark mode")
     : (themeLegend.innerHTML = "light mode");
