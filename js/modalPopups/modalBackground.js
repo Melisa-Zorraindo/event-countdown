@@ -1,3 +1,5 @@
+import { closeModal } from "./closeModalBoxes.js";
+
 export function displayBgEditionOptions(container) {
   //add modal class
   container.classList.add("modal-windows-container");
@@ -46,9 +48,7 @@ export function displayBgEditionOptions(container) {
   imageSearchBar.id = "image-selector";
   imagePickerContainer.append(imageSearchBar);
 
-  const closeModal = document.querySelector("#close-modal");
-  closeModal.addEventListener("click", () => {
-    container.classList.remove("modal-windows-container");
-    container.innerHTML = " ";
+  closeBtn.addEventListener("click", () => {
+    closeModal(container);
   });
 }

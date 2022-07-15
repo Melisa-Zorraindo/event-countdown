@@ -63,7 +63,8 @@ buttonDisplay.addEventListener("click", () => {
 });
 
 // ---------- SET SCREEN BACKGROUND ---------- //
-// ----- Click on icon triggers modal windows ----- //
+
+// ----- Open background edition window ----- //
 const modalWindowContainer = document.querySelector("#modals");
 bgEditBtn.addEventListener("click", () => {
   displayBgEditionOptions(modalWindowContainer);
