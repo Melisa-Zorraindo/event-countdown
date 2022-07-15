@@ -1,4 +1,7 @@
-import { toggleButtonVisibility } from "./functionality/buttonVisibility.js";
+import {
+  hideButtons,
+  displayButtons,
+} from "./functionality/buttonVisibility.js";
 import { enableDarkMode, disableDarkMode } from "./functionality/themes.js";
 
 // ---------- SETTINGS ---------- //
@@ -41,8 +44,17 @@ let buttons = [backgroundButton, headlineButton, countDownButton];
 const eyeIcon = document.querySelector("#eye-icon");
 const legend = document.querySelector("#visibility-para");
 
+/*Save preferance to local storage*/
+let buttonVisibility = localStorage.getItem("buttonVisibility");
+if (buttonVisibility === "invisible") {
+  hideButtons(buttons, eyeIcon, legend);
+}
+
+/*Toggle button visibility*/
 buttonDisplay.addEventListener("click", () => {
-  toggleButtonVisibility(buttons, eyeIcon, legend);
+  buttonVisibility !== "invisible"
+    ? hideButtons(buttons, eyeIcon, legend)
+    : displayButtons(buttons, eyeIcon, legend);
 });
 
 // ---------- COUNTDOWN LOGIC ---------- //
@@ -71,9 +83,18 @@ function countDown() {
     const minutesLeft = Math.floor((timeSpan % hour) / minute);
     const secondsLeft = Math.floor((timeSpan % minute) / second);
     daysField.innerHTML = `${daysLeft}<p>days</p>`;
-    hoursField.innerHTML = `${hoursLeft}<p>hours</p>`;
-    minutesField.innerHTML = `${minutesLeft}<p>minutes</p>`;
-    secondsField.innerHTML = `${secondsLeft}<p>seconds</p>`;
+    // hoursField.innerHTML = `${hoursLeft}<p>hours</p>`;
+    hoursField.innerHTML =
+      hoursLeft < 10 ? `0${hoursLeft}<p>hours</p>` : `${hoursLeft}<p>hours</p>`;
+    // minutesField.innerHTML = `${minutesLeft}<p>minutes</p>`;
+    minutesField.innerHTML =
+      minutesLeft < 10
+        ? `0${minutesLeft}<p>minutes</p>`
+        : `${minutesLeft}<p>minutes</p>`;
+    secondsField.innerHTML =
+      secondsLeft < 10
+        ? `0${secondsLeft}<p>seconds</p>`
+        : `${secondsLeft}<p>seconds</p>`;
   }
 }
 
