@@ -3,6 +3,7 @@ import {
   displayButtons,
 } from "./functionality/buttonVisibility.js";
 import { enableDarkMode, disableDarkMode } from "./functionality/themes.js";
+import { displayBgEditionOptions } from "./modalPopups/modalBackground.js";
 
 // ---------- SETTINGS ---------- //
 const settingsButton = document.querySelector(".settings-button");
@@ -36,11 +37,11 @@ modeContainer.addEventListener("click", () => {
 });
 
 // ----- Button Visibility ----- //
-const backgroundButton = document.querySelector(".background-edition-button");
+const bgEditBtn = document.querySelector(".background-edition-button");
 const headlineButton = document.querySelector(".headline-edition-button");
 const countDownButton = document.querySelector(".countdown-edition-button");
 const buttonDisplay = document.querySelector(".button-visibility-container");
-let buttons = [backgroundButton, headlineButton, countDownButton];
+let buttons = [bgEditBtn, headlineButton, countDownButton];
 const eyeIcon = document.querySelector("#eye-icon");
 const legend = document.querySelector("#visibility-para");
 
@@ -60,6 +61,17 @@ buttonDisplay.addEventListener("click", () => {
     location.reload();
   }
 });
+
+// ---------- SET SCREEN BACKGROUND ---------- //
+// ----- Click on icon triggers modal windows ----- //
+const modalWindowContainer = document.querySelector("#modals");
+bgEditBtn.addEventListener("click", () => {
+  displayBgEditionOptions(modalWindowContainer);
+});
+
+// ----- first modal has select colours html ----- //
+// ----- Second modal has pictures from unsplash and search bar ----- //
+// ----- Preferance is saved to local storage ----- //
 
 // ---------- COUNTDOWN LOGIC ---------- //
 const arrivalDate = new Date("09/28/2022");
@@ -87,7 +99,6 @@ function countDown() {
     const minutesLeft = Math.floor((timeSpan % hour) / minute);
     const secondsLeft = Math.floor((timeSpan % minute) / second);
     daysField.innerHTML = `${daysLeft}<p>days</p>`;
-    // hoursField.innerHTML = `${hoursLeft}<p>hours</p>`;
     hoursField.innerHTML =
       hoursLeft < 10 ? `0${hoursLeft}<p>hours</p>` : `${hoursLeft}<p>hours</p>`;
     minutesField.innerHTML =

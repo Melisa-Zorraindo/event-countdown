@@ -10,4 +10,22 @@
   p {
     font-size: 3vmin;
   }
+
+  /* ---------- Modal windows ---------- */
+  .modal-windows-container {
+    width: 494px;
+    margin: 4rem auto;
+  }
+
+  .modal-windows-container .close {
+    margin-right: 3rem;
+  }
+
+  .modal-box {
+    width: 400px;
+  }
+
+  .modal-box label {
+    font-size: 3vmin;
+  }
 }

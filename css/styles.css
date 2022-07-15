@@ -97,7 +97,7 @@ button:hover {
   display: none;
 }
 
-/* ---------- Modal windows ---------- */
+/* ---------- Menu ---------- */
 
 .settings-menu {
   border-top: 1px solid var(--foreground-colour);
@@ -137,5 +137,55 @@ button:hover {
 
   100% {
     left: 2rem;
+  }
+}
+
+/* ---------- Modal windows --------- */
+.modal-windows-container {
+  border: 1px solid var(--foreground-colour);
+  border-radius: 3px;
+  margin-top: 4rem;
+  animation: grow 0.5s forwards;
+}
+
+.button-container {
+  text-align: right;
+}
+
+.modal-windows-container .close {
+  margin-right: 2%;
+}
+
+.modal-box {
+  background-color: var(--background-colour);
+  border: 1px solid var(--foreground-colour);
+  border-radius: 3px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 0;
+  box-shadow: -3px 3px 6px var(--shadow-icons);
+  width: 96%;
+  animation: grow 0.5s forwards;
+}
+
+.modal-box label {
+  font-size: 1rem;
+}
+
+.modal-box input {
+  border-radius: 3px;
+  border: 1px solid var(--foreground-colour);
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }
