@@ -1,5 +1,5 @@
 import { toggleButtonVisibility } from "./functionality/buttonVisibility.js";
-import { switchThemes } from "./functionality/themes.js";
+import { enableDarkMode, disableDarkMode } from "./functionality/themes.js";
 
 // ---------- SETTINGS ---------- //
 const settingsButton = document.querySelector(".settings-button");
@@ -16,10 +16,20 @@ function displaySettings() {
 const modeContainer = document.querySelector(".mode-container");
 const darkModeIcon = document.querySelector(".fa-moon");
 const lightModeIcon = document.querySelector(".fa-sun");
-let themeIcons = [darkModeIcon, lightModeIcon];
 let themeLegend = document.querySelector("#theme-para");
+
+/* Save theme to local storage */
+let darkMode = localStorage.getItem("darkMode");
+if (darkMode === "enabled") {
+  enableDarkMode(lightModeIcon, darkModeIcon, themeLegend);
+}
+
+/* Switch themes */
 modeContainer.addEventListener("click", () => {
-  switchThemes(themeIcons, themeLegend);
+  darkMode = localStorage.getItem("darkMode");
+  darkMode !== "enabled"
+    ? enableDarkMode(lightModeIcon, darkModeIcon, themeLegend)
+    : disableDarkMode(lightModeIcon, darkModeIcon, themeLegend);
 });
 
 // ----- Button Visibility ----- //
