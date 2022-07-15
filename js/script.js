@@ -52,9 +52,13 @@ if (buttonVisibility === "invisible") {
 
 /*Toggle button visibility*/
 buttonDisplay.addEventListener("click", () => {
-  buttonVisibility !== "invisible"
-    ? hideButtons(buttons, eyeIcon, legend)
-    : displayButtons(buttons, eyeIcon, legend);
+  if (buttonVisibility !== "invisible") {
+    hideButtons(buttons, eyeIcon, legend);
+    location.reload();
+  } else {
+    displayButtons(buttons, eyeIcon, legend);
+    location.reload();
+  }
 });
 
 // ---------- COUNTDOWN LOGIC ---------- //
@@ -86,7 +90,6 @@ function countDown() {
     // hoursField.innerHTML = `${hoursLeft}<p>hours</p>`;
     hoursField.innerHTML =
       hoursLeft < 10 ? `0${hoursLeft}<p>hours</p>` : `${hoursLeft}<p>hours</p>`;
-    // minutesField.innerHTML = `${minutesLeft}<p>minutes</p>`;
     minutesField.innerHTML =
       minutesLeft < 10
         ? `0${minutesLeft}<p>minutes</p>`
