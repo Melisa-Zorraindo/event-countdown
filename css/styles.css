@@ -15,9 +15,15 @@
 .dark-mode {
   --background-colour: #3c3c3c;
   --foreground-colour: #fbfcf8;
-  --background-icons: #424242;
-  --shadow-icons: #fafafa;
+  --background-icons: #595959;
+  --shadow-icons: #979797;
 }
+
+/*font-family: 'Baloo 2', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Josefin Slab', serif;
+font-family: 'Inconsolata', monospace;
+font-family: 'Urbanist', sans-serif;*/
 
 body {
   font: 2rem "Baloo 2", cursive;

@@ -11,6 +11,7 @@ function displaySettings() {
   modalWindow.classList.toggle("hidden");
   countdownContainer.classList.toggle("hidden");
 }
+
 // ----- Themes ----- //
 const modeContainer = document.querySelector(".mode-container");
 const darkModeIcon = document.querySelector(".fa-moon");
