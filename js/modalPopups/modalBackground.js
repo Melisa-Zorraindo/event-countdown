@@ -1,4 +1,5 @@
-import { closeModal } from "./closeModalBoxes.js";
+import { closeModal } from "./commonFunctions/closeModalBoxes.js";
+import { updateColour } from "./commonFunctions/selectColours.js";
 
 export function displayBgEditionOptions(container) {
   //add modal class
@@ -50,5 +51,10 @@ export function displayBgEditionOptions(container) {
 
   closeBtn.addEventListener("click", () => {
     closeModal(container);
+  });
+
+  colourPicker.addEventListener("change", () => {
+    const body = document.querySelector("body");
+    updateColour(body, colourPicker);
   });
 }
