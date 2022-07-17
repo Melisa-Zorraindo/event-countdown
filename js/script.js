@@ -4,7 +4,6 @@ import {
 } from "./functionality/buttonVisibility.js";
 import { enableDarkMode, disableDarkMode } from "./functionality/themes.js";
 import { displayBgEditionOptions } from "./modalPopups/modalBackground.js";
-import { changeColour } from "./modalPopups/commonFunctions/selectColours.js";
 
 // ---------- SETTINGS ---------- //
 const settingsButton = document.querySelector(".settings-button");
