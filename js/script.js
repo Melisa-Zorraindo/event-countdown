@@ -43,21 +43,22 @@ const countDownButton = document.querySelector(".countdown-edition-button");
 const buttonDisplay = document.querySelector(".button-visibility-container");
 let buttons = [bgEditBtn, headlineButton, countDownButton];
 const eyeIcon = document.querySelector("#eye-icon");
+const eyeSlashIcon = document.querySelector("#eye-slash-icon");
 const legend = document.querySelector("#visibility-para");
 
 /*Save preferance to local storage*/
 let buttonVisibility = localStorage.getItem("buttonVisibility");
 if (buttonVisibility === "invisible") {
-  hideButtons(buttons, eyeIcon, legend);
+  hideButtons(buttons, eyeIcon, eyeSlashIcon, legend);
 }
 
 /*Toggle button visibility*/
 buttonDisplay.addEventListener("click", () => {
   if (buttonVisibility !== "invisible") {
-    hideButtons(buttons, eyeIcon, legend);
+    hideButtons(buttons, eyeIcon, eyeSlashIcon, legend);
     location.reload();
   } else {
-    displayButtons(buttons, eyeIcon, legend);
+    displayButtons(buttons, eyeIcon, eyeSlashIcon, legend);
     location.reload();
   }
 });
