@@ -23,10 +23,10 @@
 font-family: 'Dancing Script', cursive;
 font-family: 'Josefin Slab', serif;
 font-family: 'Inconsolata', monospace;
-font-family: 'Urbanist', sans-serif;*/
+font-family: 'Poppins', sans-serif;*/
 
 body {
-  font: 2rem "Baloo 2", cursive;
+  font: 2rem "Poppins", sans-serif;
   background-color: var(--background-colour);
   color: var(--foreground-colour);
   overflow: hidden;
