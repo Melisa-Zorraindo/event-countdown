@@ -6,17 +6,33 @@
 }
 
 :root {
-  --background-colour: #fbfcf8;
   --foreground-colour: #3c3c3c;
   --background-icons: #fafafa;
-  --shadow-icons: #aaa;
+  --shadows: #aaa;
+
+  --background-screen-default: #fbfcf8;
+  --background-window-default: #f5f7ed;
+  --background-card-default: linear-gradient(
+    190deg,
+    #fbfcf8 0%,
+    #f5f7ed 48%,
+    #edf1df 100%
+  );
 }
 
 .dark-mode {
-  --background-colour: #3c3c3c;
   --foreground-colour: #fbfcf8;
   --background-icons: #595959;
-  --shadow-icons: #979797;
+  --shadows: #979797;
+
+  --background-screen-default: #3c3c3c;
+  --background-window-default: #333;
+  --background-card-default: linear-gradient(
+    190deg,
+    #3c3c3c 0%,
+    #333 48%,
+    #292929 100%
+  );
 }
 
 /*font-family: 'Baloo 2', cursive;
@@ -27,7 +43,7 @@ font-family: 'Poppins', sans-serif;*/
 
 body {
   font: 2rem "Poppins", sans-serif;
-  background-color: var(--background-colour);
+  background-color: var(--background-screen-default);
   color: var(--foreground-colour);
   overflow: hidden;
   transition: all 0.5s ease-in-out;
@@ -78,19 +94,20 @@ p {
 }
 
 button {
-  background-color: var(--background-icons);
+  background-color: var(--background-screen-default);
   border: none;
   border-radius: 3px;
   color: var(--foreground-colour);
   padding: 0.35rem;
   transition: all 0.5s ease-in-out;
-  box-shadow: -3px 3px 6px var(--shadow-icons);
+  box-shadow: -3px 3px 6px var(--shadows);
 }
 
 button:hover {
   cursor: pointer;
-  box-shadow: none;
-  transform: scale(2);
+  /* box-shadow: none;
+  transform: scale(2); */
+  box-shadow: inset -1px 1px 3px var(--shadows);
 }
 
 .hidden {
@@ -142,8 +159,10 @@ button:hover {
 
 /* ---------- Modal windows --------- */
 .modal-windows-container {
-  border: 1px solid var(--foreground-colour);
-  border-radius: 3px;
+  background-color: var(--background-window-default);
+  border: 1px solid transparent;
+  box-shadow: -3px 3px 6px var(--shadows);
+  border-radius: 6px;
   margin-top: 4rem;
   animation: grow 0.5s forwards;
 }
@@ -154,12 +173,12 @@ button:hover {
 
 .modal-windows-container .close {
   margin-right: 2%;
+  background-color: var(--background-window-default);
 }
 
 .modal-box {
-  background-color: var(--background-colour);
-  border: 1px solid var(--foreground-colour);
-  border-radius: 3px;
+  background: var(--background-card-default);
+  border-radius: 6px;
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
@@ -167,7 +186,7 @@ button:hover {
   align-items: center;
   gap: 1rem;
   padding: 3rem 0;
-  box-shadow: -3px 3px 6px var(--shadow-icons);
+  box-shadow: -3px 3px 6px var(--shadows);
   width: 96%;
   animation: grow 0.5s forwards;
 }
