@@ -4,6 +4,7 @@ import {
 } from "./functionality/buttonVisibility.js";
 import { enableDarkMode, disableDarkMode } from "./functionality/themes.js";
 import { displayBgEditionOptions } from "./modalPopups/modalBackground.js";
+import { changeColour } from "./modalPopups/commonFunctions/selectColours.js";
 
 // ---------- SETTINGS ---------- //
 const settingsButton = document.querySelector(".settings-button");
@@ -71,9 +72,16 @@ bgEditBtn.addEventListener("click", () => {
   displayBgEditionOptions(modalWindowContainer);
 });
 
-// ----- first modal has select colours html ----- //
-// ----- Second modal has pictures from unsplash and search bar ----- //
-// ----- Preferance is saved to local storage ----- //
+// ----- Retrieve background colour from to local storage ----- //
+let screenBg = localStorage.getItem("screenBg");
+const body = document.querySelector("body");
+if (screenBg) {
+  updateBgColour(body, screenBg);
+}
+
+function updateBgColour(elem, localStorageKey) {
+  elem.style.backgroundColor = localStorageKey;
+}
 
 // ---------- COUNTDOWN LOGIC ---------- //
 const arrivalDate = new Date("09/28/2022");
