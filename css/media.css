@@ -13,12 +13,12 @@
 
   /* ---------- Modal windows ---------- */
   .modal-windows-container {
-    width: 360px;
+    width: 50%;
     margin: 4rem auto;
   }
 
   .modal-box {
-    width: 300px;
+    width: 90%;
   }
 
   .modal-box label {
