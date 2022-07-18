@@ -1,5 +1,6 @@
 import { closeModal } from "./commonFunctions/closeModalBoxes.js";
 import { changeColour } from "./commonFunctions/selectColours.js";
+import { fetchPhotos } from "../functionality/apiCall.js";
 
 export function displayBgEditionOptions(container) {
   //add modal class
@@ -56,6 +57,11 @@ export function displayBgEditionOptions(container) {
   imageSearchBar.value = " ";
   imageSearchBar.id = "image-selector";
   imagePickerContainer.append(imageSearchBar);
+  //display images
+  const unsPhotoWrapper = document.createElement("div");
+  unsPhotoWrapper.classList.add("uns-photo-wrapper");
+  imagePickerContainer.append(unsPhotoWrapper);
+  fetchPhotos(unsPhotoWrapper);
 
   closeBtn.addEventListener("click", () => {
     closeModal(container);

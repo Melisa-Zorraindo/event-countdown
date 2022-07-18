@@ -45,7 +45,7 @@ body {
   font: 2rem "Poppins", sans-serif;
   background-color: var(--background-screen-default);
   color: var(--foreground-colour);
-  overflow: hidden;
+  /* overflow: hidden; */
   transition: all 0.5s ease-in-out;
 }
 
@@ -232,4 +232,26 @@ button:hover {
   100% {
     transform: scale(1);
   }
+}
+
+/* ---------- Images from Unsplash ---------- */
+
+.uns-photo-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.uns-photo-container {
+  width: 100px;
+  height: 50px;
+}
+
+.uns-photo {
+  border-radius: 3px;
+  cursor: pointer;
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
 }
