@@ -4,27 +4,35 @@ import { changeColour } from "./commonFunctions/selectColours.js";
 export function displayBgEditionOptions(container) {
   //add modal class
   container.classList.add("modal-windows-container");
+
   //create close button container
   const closeBtnContainer = document.createElement("div");
   closeBtnContainer.classList.add("button-container");
   container.append(closeBtnContainer);
 
+  //add a heading
+  const heading = document.createElement("h2");
+  heading.innerHTML = "Edit background";
+  closeBtnContainer.append(heading);
+
   //create close button
   const closeBtn = document.createElement("button");
   closeBtn.classList.add("close");
   closeBtn.id = "close-modal";
+
   //set icon in close button
   const closeBtnIcon = document.createElement("i");
   closeBtnIcon.classList.add("fas", "fa-times");
   closeBtn.append(closeBtnIcon);
   closeBtnContainer.append(closeBtn);
+
   //create first modal container
   const colourPickerContainer = document.createElement("div");
   colourPickerContainer.classList.add("modal-box");
   container.append(colourPickerContainer);
   //create label
   const colourPickerLabel = document.createElement("label");
-  colourPickerLabel.innerHTML = "Choose a colour";
+  colourPickerLabel.innerHTML = "Solid colour";
   colourPickerContainer.append(colourPickerLabel);
   //create colour selector
   const colourPicker = document.createElement("input");
@@ -39,7 +47,7 @@ export function displayBgEditionOptions(container) {
   container.append(imagePickerContainer);
   //create label
   const imagePickerLabel = document.createElement("label");
-  imagePickerLabel.innerHTML = "Choose an image";
+  imagePickerLabel.innerHTML = "Image from Unsplash";
   imagePickerContainer.append(imagePickerLabel);
   //create search bar
   const imageSearchBar = document.createElement("input");
