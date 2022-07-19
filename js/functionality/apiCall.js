@@ -4,8 +4,8 @@ const url = `https://api.unsplash.com/photos/?client_id=${ACCESS_KEY}`;
 async function fetchPhotos() {
   try {
     const response = await fetch(url);
-    const photo = await response.json();
-    return photo;
+    const photos = await response.json();
+    return photos;
   } catch (error) {
     console.log(error);
   }
@@ -18,7 +18,7 @@ export function createPhotoSelector(imageContainer) {
     imageContainer.innerHTML += `
     <div class="uns-photo-container">
     <figure>
-    <img class="uns-photo" src="${img.urls.thumb}">
+    <img class="uns-photo" id="${img.id}" src="${img.urls.thumb}">
     <figcaption>${img.user.name}</figcaption>
     </figure>
     </div>
