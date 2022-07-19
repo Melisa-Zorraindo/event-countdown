@@ -121,4 +121,4 @@ function countDown() {
   }
 }
 
-setInterval(countDown, 1000);
+// setInterval(countDown, 1000);

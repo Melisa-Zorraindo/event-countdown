@@ -234,6 +234,11 @@ button:hover {
 
 /* ---------- Images from Unsplash ---------- */
 
+a {
+  font-weight: 700;
+  color: var(--foreground-colour);
+}
+
 .uns-photo-wrapper {
   display: flex;
   flex-wrap: wrap;

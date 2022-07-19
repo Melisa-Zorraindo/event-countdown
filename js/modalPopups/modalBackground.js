@@ -1,6 +1,6 @@
 import { closeModal } from "./commonFunctions/closeModalBoxes.js";
 import { changeColour } from "./commonFunctions/selectColours.js";
-import { fetchPhotos } from "../functionality/apiCall.js";
+import { createPhotoSelector } from "../functionality/apiCall.js";
 
 export function displayBgEditionOptions(container) {
   //add modal class
@@ -48,11 +48,11 @@ export function displayBgEditionOptions(container) {
   container.append(imagePickerContainer);
   //create label
   const imagePickerLabel = document.createElement("label");
-  imagePickerLabel.innerHTML = "Image from Unsplash";
+  imagePickerLabel.innerHTML = `Images from <a href="https://unsplash.com/">Unsplash</a>`;
   imagePickerContainer.append(imagePickerLabel);
   //create search bar
   const imageSearchBar = document.createElement("input");
-  imageSearchBar.type = "text";
+  imageSearchBar.type = "search";
   imageSearchBar.placeholder = "search";
   imageSearchBar.value = " ";
   imageSearchBar.id = "image-selector";
@@ -61,7 +61,7 @@ export function displayBgEditionOptions(container) {
   const unsPhotoWrapper = document.createElement("div");
   unsPhotoWrapper.classList.add("uns-photo-wrapper");
   imagePickerContainer.append(unsPhotoWrapper);
-  fetchPhotos(unsPhotoWrapper);
+  createPhotoSelector(unsPhotoWrapper);
 
   closeBtn.addEventListener("click", () => {
     closeModal(container);
@@ -70,5 +70,9 @@ export function displayBgEditionOptions(container) {
   colourPicker.addEventListener("change", () => {
     const body = document.querySelector("body");
     changeColour(body, colourPicker, "screenBg");
+  });
+
+  imageSearchBar.addEventListener("keydown", (e) => {
+    console.log(e);
   });
 }
