@@ -1,6 +1,8 @@
 import { closeModal } from "./commonFunctions/closeModalBoxes.js";
 import { changeColour } from "./commonFunctions/selectColours.js";
-import { createPhotoSelector } from "../functionality/apiCall.js";
+import { fetchPhotos } from "../functionality/apiCall.js";
+
+const photos = await fetchPhotos();
 
 export function displayBgEditionOptions(container) {
   //add modal class
@@ -61,7 +63,30 @@ export function displayBgEditionOptions(container) {
   const unsPhotoWrapper = document.createElement("div");
   unsPhotoWrapper.classList.add("uns-photo-wrapper");
   imagePickerContainer.append(unsPhotoWrapper);
-  createPhotoSelector(unsPhotoWrapper);
+
+  // createPhotoSelector
+  photos.forEach((img) => {
+    const photoContainer = document.createElement("div");
+    photoContainer.classList.add("uns-photo-container");
+    unsPhotoWrapper.append(photoContainer);
+
+    const figure = document.createElement("figure");
+    photoContainer.append(figure);
+
+    const picture = document.createElement("img");
+    picture.classList.add("uns-photo");
+    picture.id = img.id;
+    picture.src = img.urls.thumb;
+    figure.append(picture);
+
+    const caption = document.createElement("figcaption");
+    caption.innerHTML = img.user.name;
+    figure.append(caption);
+
+    picture.addEventListener("click", () => {
+      console.log(picture.id);
+    });
+  });
 
   closeBtn.addEventListener("click", () => {
     closeModal(container);
