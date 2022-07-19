@@ -190,14 +190,12 @@ button:hover {
 }
 
 .button-container {
-  /* text-align: right; */
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
 }
 
 .modal-windows-container .close {
-  /* margin-right: 2%; */
   background-color: var(--background-window-default);
 }
 
@@ -252,7 +250,7 @@ figure {
 }
 
 figcaption {
-  font-size: 1vmin;
+  font-size: 1vmax;
   background-color: #333;
   color: #fbfcf8;
   padding-left: 6px;
@@ -270,4 +268,9 @@ figcaption {
   height: 100px;
   object-fit: cover;
   display: block;
+  transition: all 0.5s ease-in-out;
+}
+
+.uns-photo:hover {
+  transform: scale(0.9);
 }
