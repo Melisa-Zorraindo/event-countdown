@@ -1,6 +1,7 @@
 import { closeModal } from "./commonFunctions/closeModalBoxes.js";
 import { changeColour } from "./commonFunctions/selectColours.js";
 import { fetchPhotos } from "../functionality/apiCall.js";
+import { setBackgroundImage } from "./commonFunctions/selectPicture.js";
 
 const photos = await fetchPhotos();
 
@@ -75,7 +76,7 @@ export function displayBgEditionOptions(container) {
 
     const picture = document.createElement("img");
     picture.classList.add("uns-photo");
-    picture.id = img.id;
+    picture.id = img.urls.regular;
     picture.src = img.urls.thumb;
     figure.append(picture);
 
@@ -84,7 +85,8 @@ export function displayBgEditionOptions(container) {
     figure.append(caption);
 
     picture.addEventListener("click", () => {
-      console.log(picture.id);
+      const bgImg = picture.id;
+      setBackgroundImage(bgImg, "backgroundImage");
     });
   });
 
@@ -94,7 +96,7 @@ export function displayBgEditionOptions(container) {
 
   colourPicker.addEventListener("change", () => {
     const body = document.querySelector("body");
-    changeColour(body, colourPicker, "screenBg");
+    changeColour(body, colourPicker, "screenColour");
   });
 
   imageSearchBar.addEventListener("keydown", (e) => {

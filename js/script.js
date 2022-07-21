@@ -72,14 +72,27 @@ bgEditBtn.addEventListener("click", () => {
 });
 
 // ----- Retrieve background colour from to local storage ----- //
-let screenBg = localStorage.getItem("screenBg");
+let screenColour = localStorage.getItem("screenColour");
 const body = document.querySelector("body");
-if (screenBg) {
-  updateBgColour(body, screenBg);
+if (screenColour) {
+  updateBgColour(body, screenColour);
 }
 
 function updateBgColour(elem, localStorageKey) {
   elem.style.backgroundColor = localStorageKey;
+}
+
+// ----- Retrieve background image from to local storage ----- //
+let screenBackgroundImage = localStorage.getItem("backgroundImage");
+if (screenBackgroundImage) {
+  updateBackgroundImage(screenBackgroundImage);
+}
+
+function updateBackgroundImage(localStorageKey) {
+  document.body.style.backgroundImage = `url("${localStorageKey}")`;
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center";
 }
 
 // ---------- COUNTDOWN LOGIC ---------- //
