@@ -71,7 +71,7 @@ bgEditBtn.addEventListener("click", () => {
   displayBgEditionOptions(modalWindowContainer);
 });
 
-// ----- Retrieve background colour from to local storage ----- //
+// ----- Retrieve background colour from to local storage if any ----- //
 let screenColour = localStorage.getItem("screenColour");
 const body = document.querySelector("body");
 if (screenColour) {
@@ -82,17 +82,14 @@ function updateBgColour(elem, localStorageKey) {
   elem.style.backgroundColor = localStorageKey;
 }
 
-// ----- Retrieve background image from to local storage ----- //
+// ----- Retrieve background image from to local storage if any ----- //
 let screenBackgroundImage = localStorage.getItem("backgroundImage");
 if (screenBackgroundImage) {
   updateBackgroundImage(screenBackgroundImage);
 }
 
 function updateBackgroundImage(localStorageKey) {
-  document.body.style.backgroundImage = `url("${localStorageKey}")`;
-  document.body.style.backgroundRepeat = "no-repeat";
-  document.body.style.backgroundSize = "cover";
-  document.body.style.backgroundPosition = "center";
+  document.body.style.background = `url("${localStorageKey}") center/cover no-repeat`;
 }
 
 // ---------- COUNTDOWN LOGIC ---------- //
