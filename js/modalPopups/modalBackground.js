@@ -1,9 +1,12 @@
 import { closeModal } from "./commonFunctions/closeModalBoxes.js";
 import { changeColour } from "./commonFunctions/selectColours.js";
+import { ACCESS_KEY } from "../apikey.js";
 import { fetchPhotos } from "../functionality/apiCall.js";
 import { setBackgroundImage } from "./commonFunctions/selectPicture.js";
 
-const photos = await fetchPhotos();
+const photos = await fetchPhotos(
+  `https://api.unsplash.com/photos/?client_id=${ACCESS_KEY}`
+);
 
 export function displayBgEditionOptions(container) {
   //add modal class
@@ -67,25 +70,25 @@ export function displayBgEditionOptions(container) {
 
   // createPhotoSelector
   photos.forEach((img) => {
-    const photoContainer = document.createElement("div");
+    let photoContainer = document.createElement("div");
     photoContainer.classList.add("uns-photo-container");
     unsPhotoWrapper.append(photoContainer);
 
-    const figure = document.createElement("figure");
+    let figure = document.createElement("figure");
     photoContainer.append(figure);
 
-    const picture = document.createElement("img");
+    let picture = document.createElement("img");
     picture.classList.add("uns-photo");
     picture.id = img.urls.regular;
     picture.src = img.urls.thumb;
     figure.append(picture);
 
-    const caption = document.createElement("figcaption");
+    let caption = document.createElement("figcaption");
     caption.innerHTML = img.user.name;
     figure.append(caption);
 
     picture.addEventListener("click", () => {
-      const bgImg = picture.id;
+      let bgImg = picture.id;
       setBackgroundImage(bgImg, "backgroundImage");
     });
   });
@@ -99,7 +102,39 @@ export function displayBgEditionOptions(container) {
     changeColour(body, colourPicker, "screenColour");
   });
 
-  imageSearchBar.addEventListener("keydown", (e) => {
-    console.log(e);
+  imageSearchBar.addEventListener("keyup", () => {
+    let query = imageSearchBar.value;
+    async function filterPictures() {
+      const filteredPhotos = await fetchPhotos(
+        `https://api.unsplash.com/search/photos/?query=${query}&client_id=${ACCESS_KEY}`
+      );
+
+      unsPhotoWrapper.innerHTML = " ";
+
+      filteredPhotos.forEach((photo) => {
+        let photoContainer = document.createElement("div");
+        photoContainer.classList.add("uns-photo-container");
+        unsPhotoWrapper.append(photoContainer);
+
+        let figure = document.createElement("figure");
+        photoContainer.append(figure);
+
+        let picture = document.createElement("img");
+        picture.classList.add("uns-photo");
+        picture.id = photo.urls.regular;
+        picture.src = photo.urls.thumb;
+        figure.append(picture);
+
+        let caption = document.createElement("figcaption");
+        caption.innerHTML = photo.user.name;
+        figure.append(caption);
+
+        picture.addEventListener("click", () => {
+          let bgImg = picture.id;
+          setBackgroundImage(bgImg, "backgroundImage");
+        });
+      });
+    }
+    filterPictures();
   });
 }
