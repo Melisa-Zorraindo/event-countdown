@@ -30,6 +30,10 @@ export function displayBgEditionOptions() {
         `https://api.unsplash.com/search/photos/?query=${query}&client_id=${ACCESS_KEY}`
       );
 
+      //clear container to host filtered images
+      photoContainer.innerHTML = "";
+
+      //render filtered images
       filteredPhotos.forEach((photo) => {
         createImageSelector(photo);
       });
