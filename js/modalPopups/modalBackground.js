@@ -36,6 +36,7 @@ export function displayBgEditionOptions(container) {
   //create first modal container
   const colourPickerContainer = document.createElement("div");
   colourPickerContainer.classList.add("modal-box");
+  colourPickerContainer.classList.add("modal-box-small");
   container.append(colourPickerContainer);
   //create label
   const colourPickerLabel = document.createElement("label");

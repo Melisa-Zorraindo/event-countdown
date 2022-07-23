@@ -21,6 +21,11 @@
     width: 90%;
   }
 
+  .modal-box-small {
+    width: 30%;
+    margin-left: 5%;
+  }
+
   .modal-box label {
     font-size: 2vmin;
   }
