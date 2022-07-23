@@ -68,6 +68,7 @@ buttonDisplay.addEventListener("click", () => {
 // ----- Open background edition window ----- //
 const modalWindowContainer = document.querySelector("#modals");
 bgEditBtn.addEventListener("click", () => {
+  modalWindowContainer.classList.remove("hidden");
   displayBgEditionOptions(modalWindowContainer);
 });
 
