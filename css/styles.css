@@ -246,12 +246,9 @@ a {
   justify-content: center;
 }
 
-.uns-photo-container {
-  flex: 0 0 30%;
-}
-
 figure {
   position: relative;
+  flex: 0 0 30%;
 }
 
 figcaption {
