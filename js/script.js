@@ -4,6 +4,7 @@ import {
 } from "./functionality/buttonVisibility.js";
 import { enableDarkMode, disableDarkMode } from "./functionality/themes.js";
 import { displayBgEditionOptions } from "./modalPopups/modalBackground.js";
+import { displayHeadingEditionOptions } from "./modalPopups/headingModal.js";
 
 // ---------- SETTINGS ---------- //
 const settingsButton = document.querySelector(".settings-button");
@@ -66,7 +67,7 @@ buttonDisplay.addEventListener("click", () => {
 // ---------- SET SCREEN BACKGROUND ---------- //
 
 // ----- Open background edition window ----- //
-const modalWindowContainer = document.querySelector("#modals");
+const modalWindowContainer = document.querySelector("#bg-modal");
 bgEditBtn.addEventListener("click", () => {
   modalWindowContainer.classList.remove("hidden");
   displayBgEditionOptions(modalWindowContainer);
@@ -92,6 +93,15 @@ if (screenBackgroundImage) {
 function updateBackgroundImage(localStorageKey) {
   document.body.style.background = `url("${localStorageKey}") center/cover no-repeat`;
 }
+
+// ---------- SET HEADING ---------- //
+
+// ----- Open heading edition window ----- //
+const headingModal = document.querySelector("#heading-modal");
+headlineButton.addEventListener("click", () => {
+  headingModal.classList.remove("hidden");
+  displayHeadingEditionOptions(headingModal);
+});
 
 // ---------- COUNTDOWN LOGIC ---------- //
 const arrivalDate = new Date("09/28/2022");

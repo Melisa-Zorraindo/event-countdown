@@ -4,7 +4,7 @@ import { ACCESS_KEY } from "../apikey.js";
 import { fetchPhotos } from "../functionality/apiCall.js";
 import { setBackgroundImage } from "./commonFunctions/selectPicture.js";
 
-const modalWindowContainer = document.querySelector("#modals");
+const modalWindowContainer = document.querySelector("#bg-modal");
 const overylay = document.querySelector(".overlay");
 const colourPicker = document.querySelector("#solid-colour-background-picker");
 const photoContainer = document.querySelector("#image-picker");
@@ -48,7 +48,7 @@ export function displayBgEditionOptions() {
   });
 }
 
-const closeBtn = document.querySelector("#close-modal");
+const closeBtn = document.querySelector("#close-bg-modal");
 closeBtn.addEventListener("click", () => {
   overylay.classList.add("hidden");
   closeModal(modalWindowContainer);
