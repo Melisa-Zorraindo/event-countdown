@@ -101,6 +101,46 @@
           <div class="uns-photo-wrapper" id="image-picker"></div>
         </div>
       </div>
+      <div class="modal-windows-container">
+        <div class="button-container">
+          <h2>Edit event name</h2>
+          <button class="close" id="close-title-edition">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="medium-sized-modal-container">
+          <div class="modal-box modal-box-medium">
+            <label for="event-name">Type event name</label>
+            <input type="text" id="event-name" class="field" />
+          </div>
+          <div class="modal-box modal-box-medium">
+            <label for="font-selection">Select font</label>
+            <select name="" id="font-selection" class="field">
+              <option value="cursive">Baloo 2</option>
+              <option value="handwriting">Dancing Script</option>
+              <option value="serif">Josefin Slab</option>
+              <option value="monospace">Inconsolata</option>
+              <option value="sans-serif">Poppins</option>
+            </select>
+          </div>
+          <div
+            class="modal-box modal-box-medium"
+            id="colour-bg-event-name-picker"
+          ></div>
+          <div
+            class="modal-box modal-box-medium"
+            id="colour-font-event-name-picker"
+          ></div>
+          <div class="modal-box modal-box-medium last-modal-medium">
+            <label for="event-date-message">Type message</label>
+            <input
+              type="text"
+              id="event-date-message"
+              class="field last-field"
+            />
+          </div>
+        </div>
+      </div>
     </main>
     <div class="overlay hidden"></div>
     <script src="/js/functionality/apiCall.js" type="module"></script>

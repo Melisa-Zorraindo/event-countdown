@@ -32,4 +32,17 @@
   figure {
     flex: 0 0 23%;
   }
+
+  .medium-sized-modal-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .modal-box-medium {
+    width: 40%;
+  }
+
+  .last-modal-medium {
+    margin-left: 5%;
+  }
 }

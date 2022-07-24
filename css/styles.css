@@ -228,6 +228,32 @@ button:hover {
   border: 1px solid var(--foreground-colour);
 }
 
+/* Modal heading edition */
+
+.field {
+  width: 90%;
+}
+
+option[value="cursive"] {
+  font-family: "Baloo 2", cursive;
+}
+
+option[value="handwriting"] {
+  font-family: "Dancing Script", cursive;
+}
+
+option[value="serif"] {
+  font-family: "Josefin Slab", serif;
+}
+
+option[value="monospace"] {
+  font-family: "Inconsolata", monospace;
+}
+
+option[value="sans-serif"] {
+  font-family: "Poppins", sans-serif;
+}
+
 @keyframes grow {
   0% {
     transform: scale(0);
