@@ -189,7 +189,7 @@ button:hover {
   margin-top: 4rem;
   animation: grow 0.5s forwards;
   position: absolute;
-  top: 0;
+  top: -10%;
   left: 25%;
   z-index: 10;
 }

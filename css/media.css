@@ -28,4 +28,8 @@
   .modal-box label {
     font-size: 2vmin;
   }
+
+  figure {
+    flex: 0 0 23%;
+  }
 }
