@@ -38,25 +38,6 @@
           <p id="visibility-para">hide buttons</p>
         </div>
       </div>
-      <div id="modals" class="modal-windows-container hidden">
-        <div class="button-container">
-          <h2>Edit background</h2>
-          <button class="close" id="close-modal">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div
-          class="modal-box modal-box-small"
-          id="solid-colour-background-picker"
-        ></div>
-        <div class="modal-box">
-          <label for="image-selector"
-            >Images from <a href="https://unsplash.com">Unsplash</a></label
-          >
-          <input type="search" placeholder="search" id="image-selector" />
-          <div class="uns-photo-wrapper" id="image-picker"></div>
-        </div>
-      </div>
       <div class="container">
         <button
           aria-label="edit background"
@@ -101,7 +82,27 @@
           </button>
         </div>
       </div>
+      <div id="modals" class="modal-windows-container hidden">
+        <div class="button-container">
+          <h2>Edit background</h2>
+          <button class="close" id="close-modal">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div
+          class="modal-box modal-box-small"
+          id="solid-colour-background-picker"
+        ></div>
+        <div class="modal-box">
+          <label for="image-selector"
+            >Images from <a href="https://unsplash.com">Unsplash</a></label
+          >
+          <input type="search" placeholder="search" id="image-selector" />
+          <div class="uns-photo-wrapper" id="image-picker"></div>
+        </div>
+      </div>
     </main>
+    <div class="overlay hidden"></div>
     <script src="/js/functionality/apiCall.js" type="module"></script>
     <script src="/js/script.js" type="module"></script>
   </body>

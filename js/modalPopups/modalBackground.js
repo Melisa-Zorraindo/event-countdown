@@ -5,6 +5,7 @@ import { fetchPhotos } from "../functionality/apiCall.js";
 import { setBackgroundImage } from "./commonFunctions/selectPicture.js";
 
 const modalWindowContainer = document.querySelector("#modals");
+const overylay = document.querySelector(".overlay");
 const colourPicker = document.querySelector("#solid-colour-background-picker");
 const photoContainer = document.querySelector("#image-picker");
 const imageSearchBar = document.querySelector("#image-selector");
@@ -14,12 +15,15 @@ const photos = await fetchPhotos(
 );
 
 export function displayBgEditionOptions() {
-  colourPicker.innerHTML = "";
+  //add overlay
+  overylay.classList.remove("hidden");
+
   //create colour picker
+  colourPicker.innerHTML = "";
   createColourPicker(colourPicker);
 
-  photoContainer.innerHTML = "";
   // createPhotoSelector
+  photoContainer.innerHTML = "";
   photos.forEach((img) => {
     createImageSelector(img);
   });
@@ -46,6 +50,7 @@ export function displayBgEditionOptions() {
 
 const closeBtn = document.querySelector("#close-modal");
 closeBtn.addEventListener("click", () => {
+  overylay.classList.add("hidden");
   closeModal(modalWindowContainer);
 });
 
