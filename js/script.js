@@ -3,6 +3,7 @@ import {
   displayButtons,
 } from "./functionality/buttonVisibility.js";
 import { enableDarkMode, disableDarkMode } from "./functionality/themes.js";
+import { closeModal } from "./modalPopups/commonFunctions/closeModalBoxes.js";
 import { displayBgEditionOptions } from "./modalPopups/modalBackground.js";
 import { displayHeadingEditionOptions } from "./modalPopups/headingModal.js";
 
@@ -67,10 +68,19 @@ buttonDisplay.addEventListener("click", () => {
 // ---------- SET SCREEN BACKGROUND ---------- //
 
 // ----- Open background edition window ----- //
+const overylay = document.querySelector(".overlay");
 const modalWindowContainer = document.querySelector("#bg-modal");
 bgEditBtn.addEventListener("click", () => {
+  overylay.classList.remove("hidden");
   modalWindowContainer.classList.remove("hidden");
   displayBgEditionOptions(modalWindowContainer);
+});
+
+//close//
+const closeBtn = document.querySelector("#close-bg-modal");
+closeBtn.addEventListener("click", () => {
+  overylay.classList.add("hidden");
+  closeModal(modalWindowContainer);
 });
 
 // ----- Retrieve background colour from to local storage if any ----- //
@@ -99,8 +109,16 @@ function updateBackgroundImage(localStorageKey) {
 // ----- Open heading edition window ----- //
 const headingModal = document.querySelector("#heading-modal");
 headlineButton.addEventListener("click", () => {
+  overylay.classList.remove("hidden");
   headingModal.classList.remove("hidden");
   displayHeadingEditionOptions(headingModal);
+});
+
+//close//
+const closeModalWindow = document.querySelector("#close-title-edition");
+closeModalWindow.addEventListener("click", () => {
+  overylay.classList.add("hidden");
+  closeModal(headingModal);
 });
 
 // ---------- COUNTDOWN LOGIC ---------- //
