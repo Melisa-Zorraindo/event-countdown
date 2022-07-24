@@ -14,9 +14,11 @@ const photos = await fetchPhotos(
 );
 
 export function displayBgEditionOptions() {
+  colourPicker.innerHTML = "";
   //create colour picker
   createColourPicker(colourPicker);
 
+  photoContainer.innerHTML = "";
   // createPhotoSelector
   photos.forEach((img) => {
     createImageSelector(img);
