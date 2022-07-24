@@ -2,18 +2,27 @@ const eventHeadingBg = document.querySelector("#bg-colour-event-name-picker");
 const eventHeadingFontColour = document.querySelector(
   "#font-colour-event-name-picker"
 );
+const eventTitle = document.querySelector("h1");
 
 export function displayHeadingEditionOptions() {
   //create event bg colour picker
   eventHeadingBg.innerHTML = "";
-  createColourSelector(eventHeadingBg, "Background colour");
+  createColourSelector(
+    eventHeadingBg,
+    "Background colour",
+    "bg-colour-selector"
+  );
 
   //create font colour picker
   eventHeadingFontColour.innerHTML = "";
-  createColourSelector(eventHeadingFontColour, "Font colour");
+  createColourSelector(
+    eventHeadingFontColour,
+    "Font colour",
+    "font-colour-selector"
+  );
 }
 
-function createColourSelector(container, labelName) {
+function createColourSelector(container, labelName, id) {
   //create label
   const label = document.createElement("label");
   label.innerHTML = labelName;
@@ -21,11 +30,24 @@ function createColourSelector(container, labelName) {
   //create colour selector
   const colourPicker = document.createElement("input");
   colourPicker.type = "color";
-  colourPicker.id = "colour-picker";
+  colourPicker.id = id;
   colourPicker.value = " ";
   container.append(colourPicker);
   //add event listener
   colourPicker.addEventListener("change", () => {
-    console.log("test");
+    const hue = colourPicker.value;
+    if (colourPicker.id === "bg-colour-selector") {
+      changeHeadingBgColour(hue);
+    } else if (colourPicker.id === "font-colour-selector") {
+      changeHeadingFontColour(hue);
+    }
   });
+}
+
+function changeHeadingBgColour(hue) {
+  eventTitle.style.backgroundColor = hue;
+}
+
+function changeHeadingFontColour(hue) {
+  eventTitle.style.color = hue;
 }
