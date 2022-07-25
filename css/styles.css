@@ -229,8 +229,7 @@ button:hover {
 }
 
 option[value="cursive"] {
-  /* font-family: "Baloo 2", cursive; */
-  font-family: "Rampart One", cursive;
+  font-family: "Happy Monkey", cursive;
 }
 
 option[value="handwriting"] {

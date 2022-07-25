@@ -79,7 +79,7 @@ function updateFont(font) {
       break;
 
     case "cursive":
-      font = "Rampart One";
+      font = "Happy Monkey";
       break;
 
     case "handwriting":
