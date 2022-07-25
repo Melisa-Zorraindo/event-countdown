@@ -3,6 +3,10 @@ const eventHeadingFontColour = document.querySelector(
   "#font-colour-event-name-picker"
 );
 const eventTitle = document.querySelector("h1");
+const eventDays = document.querySelector("#days");
+const eventHours = document.querySelector("#hours");
+const eventMinutes = document.querySelector("#minutes");
+const eventSeconds = document.querySelector("#seconds");
 
 export function displayHeadingEditionOptions() {
   //create event bg colour picker
@@ -64,4 +68,38 @@ function updateEventTitle(e) {
 
 newtitle.addEventListener("keyup", (e) => {
   updateEventTitle(e);
+});
+
+const newFont = document.querySelector("#font-selection");
+function updateFont(font) {
+  font === "null";
+  switch (font) {
+    case "sans-serif":
+      font = "Poppins";
+      break;
+
+    case "cursive":
+      font = "Rampart One";
+      break;
+
+    case "handwriting":
+      font = "Dancing Script";
+      break;
+
+    case "serif":
+      font = "Josefin Slab";
+      break;
+
+    case "monospace":
+      font = "Inconsolata";
+  }
+  eventTitle.style.fontFamily = font;
+  eventDays.style.fontFamily = font;
+  eventHours.style.fontFamily = font;
+  eventMinutes.style.fontFamily = font;
+  eventSeconds.style.fontFamily = font;
+}
+
+newFont.addEventListener("change", () => {
+  updateFont(newFont.value);
 });
