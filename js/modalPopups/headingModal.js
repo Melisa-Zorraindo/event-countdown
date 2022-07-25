@@ -128,3 +128,12 @@ function updateFont(font) {
 newFont.addEventListener("change", () => {
   updateFont(newFont.value);
 });
+
+const finalMessage = document.querySelector("#event-date-message");
+finalMessage.addEventListener("keyup", () => {
+  let newFinalMessage = finalMessage.value;
+  finalMessage.innerHTML = "";
+  finalMessage.innerHTML = newFinalMessage;
+
+  localStorage.setItem("finalMessage", newFinalMessage);
+});

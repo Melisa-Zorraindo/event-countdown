@@ -147,7 +147,6 @@ const eventHours = document.querySelector("#hours");
 const eventMinutes = document.querySelector("#minutes");
 const eventSeconds = document.querySelector("#seconds");
 
-// let eventFonts = localStorage.getItem("fonts");
 let eventFonts = JSON.parse(localStorage.getItem("fonts"));
 if (eventFonts) {
   eventName.style.fontFamily = eventFonts;
@@ -169,10 +168,15 @@ function countDown() {
   let timeSpan = arrivalDate - today;
 
   if (timeSpan <= 0) {
+    // ----- Retrieve final message from local storage if any ----- //
+    let storedMessage = localStorage.getItem("finalMessage");
+    if (storedMessage) {
+      eventName.innerHTML = storedMessage;
+    }
+
+    // ----- Clear timer ----- //
     const counter = document.querySelector(".timer");
     counter.innerHTML = " ";
-    counter.innerHTML = "Happy Holidays!";
-    counter.style.padding = "1rem 3rem";
   } else {
     const daysField = document.querySelector("#days");
     const hoursField = document.querySelector("#hours");
