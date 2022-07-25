@@ -1,7 +1,7 @@
-import { changeColour } from "./commonFunctions/selectColours.js";
-import { ACCESS_KEY } from "../apikey.js";
-import { fetchPhotos } from "../functionality/apiCall.js";
-import { setBackgroundImage } from "./commonFunctions/selectPicture.js";
+import { changeColour } from "../commonFunctions/selectColours.js";
+import { ACCESS_KEY } from "./apikey.js";
+import { fetchPhotos } from "./apiCall.js";
+import { setBackgroundImage } from "../commonFunctions/selectPicture.js";
 
 const colourPicker = document.querySelector("#solid-colour-background-picker");
 const photoContainer = document.querySelector("#image-picker");
@@ -22,7 +22,7 @@ export function displayBgEditionOptions() {
     createImageSelector(img);
   });
 
-  // search photos functionality
+  // search photos settings
   imageSearchBar.addEventListener("keyup", () => {
     let query = imageSearchBar.value;
     async function filterPictures() {

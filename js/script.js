@@ -1,10 +1,7 @@
-import {
-  hideButtons,
-  displayButtons,
-} from "./functionality/buttonVisibility.js";
-import { enableDarkMode, disableDarkMode } from "./functionality/themes.js";
+import { hideButtons, displayButtons } from "./settings/buttonVisibility.js";
+import { enableDarkMode, disableDarkMode } from "./settings/themes.js";
 import { closeModal } from "./modalPopups/commonFunctions/closeModalBoxes.js";
-import { displayBgEditionOptions } from "./modalPopups/modalBackground.js";
+import { displayBgEditionOptions } from "./modalPopups/background/modalBackground.js";
 import { displayHeadingEditionOptions } from "./modalPopups/headingModal.js";
 
 // ---------- SETTINGS ---------- //
