@@ -46,8 +46,10 @@ function createColourSelector(container, labelName, id) {
 
 function changeHeadingBgColour(hue) {
   eventTitle.style.backgroundColor = hue;
+  localStorage.setItem("headingBgColour", hue);
 }
 
 function changeHeadingFontColour(hue) {
   eventTitle.style.color = hue;
+  localStorage.setItem("headingFontColour", hue);
 }

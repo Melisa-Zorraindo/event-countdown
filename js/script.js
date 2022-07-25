@@ -62,7 +62,7 @@ buttonDisplay.addEventListener("click", () => {
   }
 });
 
-// ---------- SET SCREEN BACKGROUND ---------- //
+// ---------- SCREEN BACKGROUND ---------- //
 
 // ----- Open background edition window ----- //
 const overylay = document.querySelector(".overlay");
@@ -73,7 +73,7 @@ bgEditBtn.addEventListener("click", () => {
   displayBgEditionOptions(modalWindowContainer);
 });
 
-//close//
+// ----- Close background edition window ----- //
 const closeBtn = document.querySelector("#close-bg-modal");
 closeBtn.addEventListener("click", () => {
   overylay.classList.add("hidden");
@@ -101,7 +101,7 @@ function updateBackgroundImage(localStorageKey) {
   document.body.style.background = `url("${localStorageKey}") center/cover no-repeat`;
 }
 
-// ---------- SET HEADING ---------- //
+// ---------- HEADING ---------- //
 
 // ----- Open heading edition window ----- //
 const headingModal = document.querySelector("#heading-modal");
@@ -111,12 +111,29 @@ headlineButton.addEventListener("click", () => {
   displayHeadingEditionOptions(headingModal);
 });
 
-//close//
+// ----- Close heading edition window ----- //
 const closeModalWindow = document.querySelector("#close-title-edition");
 closeModalWindow.addEventListener("click", () => {
   overylay.classList.add("hidden");
   closeModal(headingModal);
 });
+
+// ----- Retrieve heading bg colour from to local storage if any ----- //
+let headingBgColour = localStorage.getItem("headingBgColour");
+const eventName = document.querySelector("h1");
+if (headingBgColour) {
+  updateBgColour(eventName, headingBgColour);
+}
+
+// ----- Retrieve heading font colour from to local storage if any ----- //
+let headingFontColour = localStorage.getItem("headingFontColour");
+if (headingFontColour) {
+  updateFontColour(eventName, headingFontColour);
+}
+
+function updateFontColour(elem, localStorageKey) {
+  elem.style.color = localStorageKey;
+}
 
 // ---------- COUNTDOWN LOGIC ---------- //
 const arrivalDate = new Date("09/28/2022");
