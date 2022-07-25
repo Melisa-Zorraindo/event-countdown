@@ -8,7 +8,7 @@ const photoContainer = document.querySelector("#image-picker");
 const imageSearchBar = document.querySelector("#image-selector");
 
 const photos = await fetchPhotos(
-  `https://api.unsplash.com/photos/?client_id=${ACCESS_KEY}`
+  `https://api.unsplash.com/photos/?per_page=12&client_id=${ACCESS_KEY}`
 );
 
 export function displayBgEditionOptions() {
@@ -27,7 +27,7 @@ export function displayBgEditionOptions() {
     let query = imageSearchBar.value;
     async function filterPictures() {
       const filteredPhotos = await fetchPhotos(
-        `https://api.unsplash.com/search/photos/?query=${query}&client_id=${ACCESS_KEY}`
+        `https://api.unsplash.com/search/photos/?query=${query}&per_page=12&client_id=${ACCESS_KEY}`
       );
 
       //clear container to host filtered images
