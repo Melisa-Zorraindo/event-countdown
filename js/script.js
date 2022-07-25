@@ -80,7 +80,7 @@ closeBtn.addEventListener("click", () => {
   closeModal(modalWindowContainer);
 });
 
-// ----- Retrieve background colour from to local storage if any ----- //
+// ----- Retrieve background colour from local storage if any ----- //
 let screenColour = localStorage.getItem("screenColour");
 const body = document.querySelector("body");
 if (screenColour) {
@@ -91,7 +91,7 @@ function updateBgColour(elem, localStorageKey) {
   elem.style.backgroundColor = localStorageKey;
 }
 
-// ----- Retrieve background image from to local storage if any ----- //
+// ----- Retrieve background image from local storage if any ----- //
 let screenBackgroundImage = localStorage.getItem("backgroundImage");
 if (screenBackgroundImage) {
   updateBackgroundImage(screenBackgroundImage);
@@ -118,14 +118,20 @@ closeModalWindow.addEventListener("click", () => {
   closeModal(headingModal);
 });
 
-// ----- Retrieve heading bg colour from to local storage if any ----- //
-let headingBgColour = localStorage.getItem("headingBgColour");
+// ----- Retrieve event title local storage if any ----- //
+let eventTitle = localStorage.getItem("eventTitle");
 const eventName = document.querySelector("h1");
+if (eventTitle) {
+  eventName.innerHTML = eventTitle;
+}
+
+// ----- Retrieve heading bg colour from local storage if any ----- //
+let headingBgColour = localStorage.getItem("headingBgColour");
 if (headingBgColour) {
   updateBgColour(eventName, headingBgColour);
 }
 
-// ----- Retrieve heading font colour from to local storage if any ----- //
+// ----- Retrieve heading font colour from local storage if any ----- //
 let headingFontColour = localStorage.getItem("headingFontColour");
 if (headingFontColour) {
   updateFontColour(eventName, headingFontColour);

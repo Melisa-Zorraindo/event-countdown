@@ -53,3 +53,15 @@ function changeHeadingFontColour(hue) {
   eventTitle.style.color = hue;
   localStorage.setItem("headingFontColour", hue);
 }
+
+const newtitle = document.querySelector("#event-name");
+function updateEventTitle(e) {
+  let title = newtitle.value;
+  eventTitle.innerHTML = "";
+  eventTitle.innerHTML += title;
+  localStorage.setItem("eventTitle", title);
+}
+
+newtitle.addEventListener("keyup", (e) => {
+  updateEventTitle(e);
+});

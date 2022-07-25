@@ -35,12 +35,6 @@
   );
 }
 
-/*font-family: 'Baloo 2', cursive;
-font-family: 'Dancing Script', cursive;
-font-family: 'Josefin Slab', serif;
-font-family: 'Inconsolata', monospace;
-font-family: 'Poppins', sans-serif;*/
-
 body {
   font: 2rem "Poppins", sans-serif;
   background-color: var(--background-screen-default);
