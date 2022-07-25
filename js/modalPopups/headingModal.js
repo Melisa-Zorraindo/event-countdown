@@ -93,11 +93,34 @@ function updateFont(font) {
     case "monospace":
       font = "Inconsolata";
   }
+
+  //update styles
   eventTitle.style.fontFamily = font;
   eventDays.style.fontFamily = font;
   eventHours.style.fontFamily = font;
   eventMinutes.style.fontFamily = font;
   eventSeconds.style.fontFamily = font;
+
+  //save updates to local storage
+  let eventTitleFont = eventTitle.style.fontFamily;
+  let eventDaysFont = eventDays.style.fontFamily;
+  let eventHoursFont = eventHours.style.fontFamily;
+  let eventMinutesFont = eventMinutes.style.fontFamily;
+  let eventSecondsFont = eventSeconds.style.fontFamily;
+
+  let eventFont = localStorage.getItem("fonts")
+    ? JSON.parse(localStorage.getItem("fonts"))
+    : [];
+
+  eventFont.unshift(
+    eventTitleFont,
+    eventDaysFont,
+    eventHoursFont,
+    eventMinutesFont,
+    eventSecondsFont
+  );
+
+  localStorage.setItem("fonts", JSON.stringify(eventFont));
 }
 
 newFont.addEventListener("change", () => {

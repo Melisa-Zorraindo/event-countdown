@@ -141,6 +141,22 @@ function updateFontColour(elem, localStorageKey) {
   elem.style.color = localStorageKey;
 }
 
+// ----- Retrieve heading font from local storage if any ----- //
+const eventDays = document.querySelector("#days");
+const eventHours = document.querySelector("#hours");
+const eventMinutes = document.querySelector("#minutes");
+const eventSeconds = document.querySelector("#seconds");
+
+// let eventFonts = localStorage.getItem("fonts");
+let eventFonts = JSON.parse(localStorage.getItem("fonts"));
+if (eventFonts) {
+  eventName.style.fontFamily = eventFonts;
+  eventDays.style.fontFamily = eventFonts;
+  eventHours.style.fontFamily = eventFonts;
+  eventMinutes.style.fontFamily = eventFonts;
+  eventSeconds.style.fontFamily = eventFonts;
+}
+
 // ---------- COUNTDOWN LOGIC ---------- //
 const arrivalDate = new Date("09/28/2022");
 const second = 1000;
