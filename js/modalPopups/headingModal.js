@@ -120,6 +120,8 @@ function updateFont(font) {
     eventSecondsFont
   );
 
+  eventFont.splice(5, 5);
+
   localStorage.setItem("fonts", JSON.stringify(eventFont));
 }
 
