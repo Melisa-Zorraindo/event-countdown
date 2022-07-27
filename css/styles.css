@@ -310,3 +310,32 @@ figcaption {
 .uns-photo:hover {
   transform: scale(0.9);
 }
+
+/*Calendar*/
+
+.fa-caret-square-right {
+  cursor: pointer;
+}
+
+.calendar-box {
+  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid red;
+  gap: 0.2rem;
+}
+
+.week-day-box {
+  flex: 0 0 11%;
+  margin-left: 0.4rem;
+  text-align: center;
+  border: 1px solid pink;
+}
+
+.calendar-day {
+  border: 1px solid black;
+  flex: 0 0 11%;
+  margin-left: 0.4rem;
+  text-align: center;
+  cursor: pointer;
+}
