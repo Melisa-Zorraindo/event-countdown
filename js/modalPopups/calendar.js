@@ -47,7 +47,7 @@ week.forEach((day) => {
 });
 
 //start day of week on right day
-const firstDay = new Date();
+const firstDay = new Date(`${year[currentMonth].month} 1 ${currentYear}`);
 console.log(firstDay);
 const dayOffset = firstDay.getDay();
 console.log(dayOffset);
