@@ -183,8 +183,7 @@ button:hover {
   margin-top: 4rem;
   animation: grow 0.5s forwards;
   position: absolute;
-  top: -10%;
-  left: 25%;
+  bottom: 0;
   z-index: 10;
 }
 
@@ -312,6 +311,10 @@ figcaption {
 }
 
 /*Calendar*/
+.calendar-heading {
+  display: flex;
+  align-items: center;
+}
 
 .fa-caret-square-right {
   cursor: pointer;
@@ -325,8 +328,8 @@ figcaption {
   gap: 0.2rem;
 }
 
-.week-day-box {
-  flex: 0 0 11%;
+.weekday {
+  flex: 0 0 12%;
   margin-left: 0.4rem;
   text-align: center;
   border: 1px solid pink;
@@ -334,8 +337,12 @@ figcaption {
 
 .calendar-day {
   border: 1px solid black;
-  flex: 0 0 11%;
+  flex: 0 0 12%;
   margin-left: 0.4rem;
   text-align: center;
   cursor: pointer;
+}
+
+.inactive {
+  cursor: auto;
 }

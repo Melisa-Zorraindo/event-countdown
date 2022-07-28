@@ -3,6 +3,7 @@ import { enableDarkMode, disableDarkMode } from "./settings/themes.js";
 import { closeModal } from "./modalPopups/commonFunctions/closeModalBoxes.js";
 import { displayBgEditionOptions } from "./modalPopups/background/modalBackground.js";
 import { displayHeadingEditionOptions } from "./modalPopups/headingModal.js";
+import { displayCalendar } from "./modalPopups/calendar/calendar.js";
 
 // ---------- SETTINGS ---------- //
 const settingsButton = document.querySelector(".settings-button");
@@ -155,6 +156,23 @@ if (eventFonts) {
   eventMinutes.style.fontFamily = eventFonts;
   eventSeconds.style.fontFamily = eventFonts;
 }
+
+// ---------- CALENDAR ---------- //
+
+const calendarModal = document.querySelector("#modal-calendar");
+const closeCalendar = document.querySelector("#close-calender-modal");
+
+// ----- Open calendar window ----- //
+countDownButton.addEventListener("click", () => {
+  overylay.classList.remove("hidden");
+  displayCalendar();
+});
+
+// ----- Close calendar window ----- //
+closeCalendar.addEventListener("click", () => {
+  overylay.classList.add("hidden");
+  closeModal(calendarModal);
+});
 
 // ---------- COUNTDOWN LOGIC ---------- //
 const arrivalDate = new Date("09/28/2022");
