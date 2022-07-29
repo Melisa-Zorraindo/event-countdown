@@ -36,7 +36,7 @@
 }
 
 body {
-  font: 2rem "Poppins", sans-serif;
+  font: 1.5rem "Poppins", sans-serif;
   background-color: var(--background-screen-default);
   color: var(--foreground-colour);
   /* overflow: hidden; */
@@ -328,19 +328,32 @@ figcaption {
   gap: 0.2rem;
 }
 
-.weekday {
-  flex: 0 0 12%;
-  margin-left: 0.4rem;
+.calendar-weekday {
+  flex: 0 0 100%;
+  display: flex;
   text-align: center;
   border: 1px solid pink;
 }
 
+.weekday,
+.calendar-day {
+  flex: 0 0 auto;
+  flex: 0 0 14%;
+  border: 1px solid green;
+  text-align: center;
+}
+
+.day-box {
+  flex: 0 0 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid blue;
+}
+
 .calendar-day {
   border: 1px solid black;
-  flex: 0 0 12%;
-  margin-left: 0.4rem;
-  text-align: center;
   cursor: pointer;
+  flex: 0 0 14%;
 }
 
 .inactive {
