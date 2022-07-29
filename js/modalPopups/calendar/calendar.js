@@ -65,13 +65,13 @@ export function displayCalendar() {
   });
 }
 
-let monthAddition = 0;
+let addedMonth = 0;
 let yearAddition = 0;
 let monthRestart = year[0].month;
 function displayFollowingMonth(heading, calendarContainer) {
   //display following month
-  monthAddition++;
-  let followingMonth = year[currentMonth + monthAddition].month;
+  addedMonth++;
+  let followingMonth = year[currentMonth + addedMonth].month;
   heading.innerHTML = `${followingMonth} ${currentYear}`;
 
   //display calendar for matching month
@@ -79,7 +79,7 @@ function displayFollowingMonth(heading, calendarContainer) {
 
   //start day of week on right day
   const startDay = new Date(
-    `${year[currentMonth + monthAddition].month} 1 ${currentYear}`
+    `${year[currentMonth + addedMonth].month} 1 ${currentYear}`
   );
   const dayOffset = startDay.getDay();
   renderCalendarDays(dayOffset, calendarContainer);
