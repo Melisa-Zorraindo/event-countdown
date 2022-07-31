@@ -3,7 +3,7 @@ import { enableDarkMode, disableDarkMode } from "./settings/themes.js";
 import { closeModal } from "./modalPopups/commonFunctions/closeModalBoxes.js";
 import { displayBgEditionOptions } from "./modalPopups/background/modalBackground.js";
 import { displayHeadingEditionOptions } from "./modalPopups/headingModal.js";
-import { displayCalendar } from "./modalPopups/calendar/calendar.js";
+// import { displayCalendar } from "./modalPopups/calendar/calendar.js";
 
 // ---------- SETTINGS ---------- //
 const settingsButton = document.querySelector(".settings-button");

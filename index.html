@@ -147,17 +147,34 @@
           </div>
         </div>
       </div>
-      <div class="modal-windows-container hidden" id="modal-calendar">
+      <div class="modal-windows-container" id="modal-calendar">
         <div class="button-container">
           <h2>Edit event</h2>
           <button class="close" id="close-calender-modal">
             <i class="fas fa-times"></i>
           </button>
         </div>
-        <div id="calendar"></div>
+        <div id="calendar-container">
+          <div id="header" class="calendar-header">
+            <button id="previous-button">&lsaquo;</button>
+            <div id="month-display"></div>
+            <button id="next-button">&rsaquo;</button>
+          </div>
+          <div id="weekdays" class="calendar-weekday">
+            <div class="weekday">M</div>
+            <div class="weekday">T</div>
+            <div class="weekday">W</div>
+            <div class="weekday">T</div>
+            <div class="weekday">F</div>
+            <div class="weekday">S</div>
+            <div class="weekday">S</div>
+          </div>
+          <div id="calendar" class="calendar-box"></div>
+        </div>
       </div>
     </main>
     <div class="overlay hidden"></div>
+    <script src="/js/modalPopups/calendar/calendar.js"></script>
     <script src="/js/script.js" type="module"></script>
   </body>
 </html>

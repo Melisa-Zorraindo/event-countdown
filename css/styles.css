@@ -311,49 +311,25 @@ figcaption {
 }
 
 /*Calendar*/
-.calendar-heading {
+.calendar-header {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.fa-caret-square-right {
-  cursor: pointer;
-}
-
-.calendar-box {
+.calendar-box,
+.calendar-weekday {
   font-size: 1rem;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid red;
   gap: 0.2rem;
 }
 
-.calendar-weekday {
-  flex: 0 0 100%;
-  display: flex;
-  text-align: center;
-  border: 1px solid pink;
-}
-
 .weekday,
-.calendar-day {
-  flex: 0 0 auto;
-  flex: 0 0 14%;
+.day {
+  flex: 0 0 13%;
   border: 1px solid green;
   text-align: center;
-}
-
-.day-box {
-  flex: 0 0 100%;
-  display: flex;
-  flex-wrap: wrap;
-  border: 1px solid blue;
-}
-
-.calendar-day {
-  border: 1px solid black;
-  cursor: pointer;
-  flex: 0 0 14%;
 }
 
 .inactive {

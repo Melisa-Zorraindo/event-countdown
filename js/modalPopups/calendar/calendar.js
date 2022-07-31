@@ -1,110 +1,68 @@
-import { year } from "./calendarComponents.js";
-import { week } from "./calendarComponents.js";
+let nav = 0;
 
-const modalCalendar = document.querySelector("#modal-calendar");
-const calendarCard = document.querySelector("#calendar");
-const date = new Date();
-const currentDay = date.getDate();
-const currentMonth = date.getMonth();
-const currentYear = date.getFullYear();
+const weekdays = ["M", "T", "W", "T", "F", "S", "S"];
 
-export function displayCalendar() {
-  modalCalendar.classList.remove("hidden");
+const calendar = document.querySelector("#calendar");
 
-  calendarCard.innerHTML = "";
-  const calendarContainer = document.createElement("div");
-  calendarContainer.classList.add("modal-box");
-  calendarCard.append(calendarContainer);
+function displayCalendar() {
+  const dt = new Date();
 
-  const monthYearBox = document.createElement("div");
-  monthYearBox.classList.add("calendar-heading");
-  calendarContainer.append(monthYearBox);
+  if (nav !== 0) {
+    dt.setMonth(new Date().getMonth() + nav);
+    console.log(nav);
+  }
 
-  const previous = document.createElement("i");
-  previous.classList.add("fas", "fa-caret-square-left");
-  previous.id = "previuos";
-  monthYearBox.append(previous);
+  const month = dt.getMonth();
+  const year = dt.getFullYear();
 
-  const monthYearHeading = document.createElement("h3");
-  monthYearHeading.innerHTML = `${year[currentMonth].month} ${currentYear}`;
-  monthYearBox.append(monthYearHeading);
+  const firstDay = new Date(year, month, 1);
 
-  const next = document.createElement("i");
-  next.classList.add("fas", "fa-caret-square-right");
-  next.id = "next";
-  monthYearBox.append(next);
+  //get number of days in month
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-  const calendarBox = document.createElement("div");
-  calendarBox.classList.add("calendar-box");
-  calendarContainer.append(calendarBox);
-
-  const weekdaysBox = document.createElement("div");
-  weekdaysBox.classList.add("calendar-weekday");
-  calendarBox.append(weekdaysBox);
-
-  week.forEach((day) => {
-    const weekDay = document.createElement("div");
-    weekDay.innerHTML += day;
-    weekDay.classList.add("weekday");
-    weekdaysBox.append(weekDay);
+  const dateString = firstDay.toLocaleDateString("en-GB", {
+    weekday: "narrow",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
   });
 
-  const dayBox = document.createElement("div");
-  dayBox.classList.add("day-box");
-  calendarBox.append(dayBox);
+  const inactiveDays = weekdays.indexOf(dateString.split(", ")[0]);
 
-  //start day of week on right day
-  const firstDay = new Date(`${year[currentMonth].month} 1 ${currentYear}`);
-  const dayOffset = firstDay.getDay();
+  const calendarHeader = document.querySelector("#month-display");
+  calendarHeader.innerHTML = `${dt.toLocaleDateString("en-GB", {
+    month: "long",
+  })} ${year}`;
 
-  renderCalendarDays(dayOffset, dayBox);
+  calendar.innerHTML = "";
 
-  //update calendar to next month
+  for (let i = 1; i <= inactiveDays + daysInMonth; i++) {
+    const daySquare = document.createElement("div");
+    daySquare.classList.add("day");
+
+    i > inactiveDays
+      ? (daySquare.innerHTML = i - inactiveDays)
+      : daySquare.classList.add("inactive");
+
+    calendar.append(daySquare);
+  }
+}
+
+function initButtons() {
+  const next = document.querySelector("#next-button");
   next.addEventListener("click", () => {
-    displayFollowingMonth(monthYearHeading, dayBox);
+    nav++;
+    // console.log(nav);
+    displayCalendar();
+  });
+
+  const previous = document.querySelector("#previous-button");
+  previous.addEventListener("click", () => {
+    nav--;
+    // console.log(nav);
+    displayCalendar();
   });
 }
 
-let addedMonth = 0;
-let yearAddition = 0;
-let monthRestart = year[0].month;
-function displayFollowingMonth(heading, calendarContainer) {
-  //display following month
-  addedMonth++;
-  let followingMonth = year[currentMonth + addedMonth].month;
-  heading.innerHTML = `${followingMonth} ${currentYear}`;
-
-  //display calendar for matching month
-  calendarContainer.innerHTML = "";
-
-  //start day of week on right day
-  const startDay = new Date(
-    `${year[currentMonth + addedMonth].month} 1 ${currentYear}`
-  );
-  const dayOffset = startDay.getDay();
-  renderCalendarDays(dayOffset, calendarContainer);
-
-  //display following year if applicable
-
-  //deactivate button if applicable
-}
-
-function renderCalendarDays(dayOffset, container) {
-  //start day of week on right day
-  for (let i = 1; i < dayOffset; i++) {
-    const emptyDay = document.createElement("div");
-    emptyDay.classList.add("calendar-day", "inactive");
-    container.append(emptyDay);
-  }
-
-  const dayNumber = year[currentMonth].days;
-  for (let i = 0; i < dayNumber; i++) {
-    const day = document.createElement("div");
-    day.innerHTML += i + 1;
-    day.classList.add("calendar-day");
-    if (i < currentDay) {
-      day.classList.add("inactive");
-    }
-    container.append(day);
-  }
-}
+displayCalendar();
+initButtons();
