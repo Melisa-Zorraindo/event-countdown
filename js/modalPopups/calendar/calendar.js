@@ -4,12 +4,26 @@ const weekdays = ["M", "T", "W", "T", "F", "S", "S"];
 
 const calendar = document.querySelector("#calendar");
 
-function displayCalendar() {
+export function displayCalendar() {
   const dt = new Date();
+
+  //if bug found in september/october try this:
+  // nav changes when back and next buttons clicked
+  /*   if (nav !== 0) {
+
+    // Set date to first day of month
+    dt = new Date(`${month + 1}/01/${year}`);
+
+    // Add or subtract one month, depending on button clicked
+    dt.setMonth(dt.getMonth() + nav);
+
+    // set month and year to updated dt
+    month = dt.getMonth();
+    year = dt.getFullYear();
+  } */
 
   if (nav !== 0) {
     dt.setMonth(new Date().getMonth() + nav);
-    console.log(nav);
   }
 
   const month = dt.getMonth();
@@ -27,6 +41,7 @@ function displayCalendar() {
     day: "numeric",
   });
 
+  //find offset days to render empty squares
   const inactiveDays = weekdays.indexOf(dateString.split(", ")[0]);
 
   const calendarHeader = document.querySelector("#month-display");
@@ -34,6 +49,7 @@ function displayCalendar() {
     month: "long",
   })} ${year}`;
 
+  //clear calendar every time to avoid piling up months
   calendar.innerHTML = "";
 
   for (let i = 1; i <= inactiveDays + daysInMonth; i++) {
@@ -48,21 +64,19 @@ function displayCalendar() {
   }
 }
 
+//next previous buttons functionality
 function initButtons() {
   const next = document.querySelector("#next-button");
   next.addEventListener("click", () => {
     nav++;
-    // console.log(nav);
     displayCalendar();
   });
 
   const previous = document.querySelector("#previous-button");
   previous.addEventListener("click", () => {
     nav--;
-    // console.log(nav);
     displayCalendar();
   });
 }
 
-displayCalendar();
 initButtons();
