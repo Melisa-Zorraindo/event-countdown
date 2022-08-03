@@ -44,19 +44,19 @@ body {
   position: relative;
 }
 
-header {
+/* header {
   display: flex;
   justify-content: flex-end;
   margin-top: 1rem;
   margin-right: 1rem;
-}
+} */
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
 }
 
 .heading-container,
@@ -92,39 +92,31 @@ p {
   font-size: 0.7rem;
 }
 
+nav {
+  border: 1px solid grey;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 3px;
+  color: var(--foreground-colour);
+  width: 90%;
+  padding: 0.5rem 0;
+  margin: 0 auto 0.5rem;
+  box-shadow: -3px 3px 6px var(--shadows);
+}
+
 button {
   background-color: var(--background-screen-default);
   border: none;
-  border-radius: 3px;
   color: var(--foreground-colour);
-  padding: 0.35rem;
-  transition: all 0.5s ease-in-out;
-  box-shadow: -3px 3px 6px var(--shadows);
-  position: relative;
+}
+
+button i {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
 }
 
 button:hover {
   cursor: pointer;
-  /* box-shadow: none;
-  transform: scale(2); */
-  box-shadow: inset -1px 1px 3px var(--shadows);
-}
-
-.background-edition-button::before {
-  width: 150px;
-  padding: 0.5rem;
-  border-radius: 3px;
-  box-shadow: -3px 3px 6px var(--shadows);
-  position: absolute;
-  top: -100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--background-card-default);
-  /* z-index: 1; */
-}
-
-.background-edition-button:hover::before {
-  content: attr(data-hover);
 }
 
 .hidden {
@@ -133,7 +125,7 @@ button:hover {
 
 /* ---------- Menu ---------- */
 
-.settings-menu {
+/* .settings-menu {
   border-top: 1px solid var(--foreground-colour);
   padding: 0 2rem;
   position: relative;
@@ -172,7 +164,7 @@ button:hover {
   100% {
     left: 2rem;
   }
-}
+} */
 
 /* ---------- Modal windows --------- */
 .modal-windows-container {
