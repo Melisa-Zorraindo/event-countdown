@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Happy+Monkey&family=Inconsolata&family=Josefin+Slab&family=Poppins&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Happy+Monkey&family=Inconsolata&family=Josefin+Slab&family=Nunito&family=Poppins&display=swap"
       rel="stylesheet"
     />
     <script
@@ -126,7 +126,7 @@
           </button>
         </div>
         <div class="medium-sized-modal-container">
-          <div class="modal-box modal-box-medium">
+          <!-- <div class="modal-box modal-box-medium">
             <label for="event-name">Type event name</label>
             <input
               type="text"
@@ -134,7 +134,7 @@
               class="field"
               placeholder="Trip to California"
             />
-          </div>
+          </div> -->
           <div class="modal-box modal-box-medium">
             <label for="font-selection">Select font</label>
             <select name="font" id="font-selection" class="field">
@@ -153,7 +153,7 @@
             class="modal-box modal-box-medium"
             id="font-colour-event-name-picker"
           ></div>
-          <div class="modal-box modal-box-medium last-modal-medium">
+          <!--  <div class="modal-box modal-box-medium last-modal-medium">
             <label for="event-date-message">Type final message</label>
             <input
               type="text"
@@ -161,7 +161,7 @@
               class="field last-field"
               placeholder="Happy Holidays!"
             />
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="modal-windows-container hidden" id="modal-calendar">
@@ -171,7 +171,27 @@
             <i class="fas fa-times"></i>
           </button>
         </div>
-        <div id="calendar-container">
+        <!-- <div class="modal-box modal-box-medium">
+          <label for="event-name">Type event name</label>
+          <input
+            type="text"
+            id="event-name"
+            class="field"
+            placeholder="Trip to California"
+          />
+        </div> -->
+        <div class="wrap">
+          <div>
+            <label for="event-name">Type event name</label>
+            <input
+              type="text"
+              id="event-name"
+              class="field"
+              placeholder="Trip to California"
+            />
+          </div>
+        </div>
+        <div id="calendar-container" class="test">
           <div id="header" class="calendar-header">
             <button id="previous-button">&lsaquo;</button>
             <div id="month-display"></div>
@@ -188,6 +208,29 @@
           </div>
           <div id="calendar" class="calendar-box"></div>
         </div>
+        <div class="wrap">
+          <div>
+            <label for="event-date-message">Type final message</label>
+            <input
+              type="text"
+              id="event-date-message"
+              class="field last-field"
+              placeholder="Happy Holidays!"
+            />
+          </div>
+        </div>
+        <div class="save-btn-container">
+          <button>Save</button>
+        </div>
+        <!-- <div class="modal-box modal-box-medium last-modal-medium">
+          <label for="event-date-message">Type final message</label>
+          <input
+            type="text"
+            id="event-date-message"
+            class="field last-field"
+            placeholder="Happy Holidays!"
+          />
+        </div> -->
       </div>
     </main>
     <div class="overlay hidden"></div>

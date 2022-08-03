@@ -36,7 +36,7 @@
 }
 
 body {
-  font: 1.5rem "Poppins", sans-serif;
+  font: 1.5rem "Nunito", sans-serif;
   background-color: var(--background-screen-default);
   color: var(--foreground-colour);
   /* overflow: hidden; */
@@ -170,12 +170,11 @@ button:hover {
 .modal-windows-container {
   background-color: var(--background-window-default);
   border: 1px solid transparent;
-  box-shadow: -3px 3px 6px var(--shadows);
   border-radius: 6px;
-  margin-top: 4rem;
   animation: grow 0.5s forwards;
   position: absolute;
-  bottom: 0;
+
+  top: 0;
   z-index: 10;
 }
 
@@ -189,7 +188,18 @@ button:hover {
   background-color: var(--background-window-default);
 }
 
-.modal-box {
+.save-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.save-btn-container button {
+  padding: 0.5rem 3rem;
+  border-radius: 3px;
+}
+
+/* .modal-box {
   background: var(--background-card-default);
   border-radius: 6px;
   margin: 2rem auto;
@@ -211,13 +221,13 @@ button:hover {
 .modal-box input {
   border-radius: 3px;
   border: 1px solid var(--foreground-colour);
-}
+} */
 
 /* Modal heading edition */
 
-.field {
+/* .field {
   width: 90%;
-}
+} */
 
 option[value="cursive"] {
   font-family: "Happy Monkey", cursive;
@@ -302,16 +312,54 @@ figcaption {
   transform: scale(0.9);
 }
 
+/* ---------- Event settings ---------- */
+
+/*Event name*/
+.wrap {
+  margin: 2rem 0.5rem 3rem;
+  position: relative;
+}
+
+label {
+  position: absolute;
+  top: -0.6rem;
+  font-size: 0.8rem;
+  margin-left: 0.8rem;
+  background-color: var(--background-window-default);
+}
+
+input[type="text"] {
+  width: 100%;
+  border-radius: 3px;
+  padding: 1rem;
+  border: 1px solid var(--shadows);
+  font-size: 0.9rem;
+  background-color: var(--background-window-default);
+  color: var(--foreground-colour);
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
 /*Calendar*/
+.test {
+  border: 1px solid var(--shadows);
+  border-radius: 3px;
+  margin: 2rem 0.5rem 3rem;
+}
+
 .calendar-header {
+  font-size: 1.1rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
+  padding: 1rem 0 2rem;
 }
 
 .calendar-box,
 .calendar-weekday {
-  font-size: 1rem;
+  font-size: 0.8rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.2rem;
@@ -320,8 +368,12 @@ figcaption {
 .weekday,
 .day {
   flex: 0 0 13%;
-  border: 1px solid green;
   text-align: center;
+}
+
+.calendar-box,
+.calendar-weekday {
+  margin-bottom: 1rem;
 }
 
 .inactive {
