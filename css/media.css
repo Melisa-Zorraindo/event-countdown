@@ -1,4 +1,4 @@
-@media screen and (min-width: 500px) {
+/* @media screen and (min-width: 500px) {
   body {
     font-size: 8vmin;
   }
@@ -9,14 +9,14 @@
 
   p {
     font-size: 3vmin;
-  }
+  } */
 
-  /* ---------- Modal windows ---------- */
-  /*   .modal-windows-container {
+/* ---------- Modal windows ---------- */
+/*   .modal-windows-container {
     width: 50%;
   } */
 
-  .modal-box {
+/*   .modal-box {
     width: 90%;
   }
 
@@ -45,4 +45,4 @@
   .last-modal-medium {
     margin-left: 5%;
   }
-}
+} */

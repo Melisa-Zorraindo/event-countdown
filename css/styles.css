@@ -9,6 +9,7 @@
   --foreground-colour: #3c3c3c;
   --background-icons: #fafafa;
   --shadows: #aaa;
+  --borders: #d1d1d1;
 
   --background-screen-default: #fbfcf8;
   --background-window-default: #f5f7ed;
@@ -24,6 +25,7 @@
   --foreground-colour: #fbfcf8;
   --background-icons: #595959;
   --shadows: #979797;
+  --borders: #808080;
 
   --background-screen-default: #3c3c3c;
   --background-window-default: #333;
@@ -195,8 +197,12 @@ button:hover {
 }
 
 .save-btn-container button {
-  padding: 0.5rem 3rem;
+  padding: 0.5rem 0;
+  width: 95%;
   border-radius: 3px;
+  background-color: #ff4f00;
+  color: #fafafa;
+  font: 1rem "Nunito", sans-serif;
 }
 
 /* .modal-box {
@@ -315,7 +321,7 @@ figcaption {
 /* ---------- Event settings ---------- */
 
 /*Event name*/
-.wrap {
+.section {
   margin: 2rem 0.5rem 3rem;
   position: relative;
 }
@@ -323,8 +329,10 @@ figcaption {
 label {
   position: absolute;
   top: -0.6rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   margin-left: 0.8rem;
+  padding: 0 0.2rem;
   background-color: var(--background-window-default);
 }
 
@@ -332,7 +340,7 @@ input[type="text"] {
   width: 100%;
   border-radius: 3px;
   padding: 1rem;
-  border: 1px solid var(--shadows);
+  border: 1px solid var(--borders);
   font-size: 0.9rem;
   background-color: var(--background-window-default);
   color: var(--foreground-colour);
@@ -343,10 +351,11 @@ input[type="text"]:focus {
 }
 
 /*Calendar*/
-.test {
-  border: 1px solid var(--shadows);
+.calendar-container {
+  border: 1px solid var(--borders);
   border-radius: 3px;
   margin: 2rem 0.5rem 3rem;
+  position: relative;
 }
 
 .calendar-header {
@@ -354,15 +363,16 @@ input[type="text"]:focus {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem 0 2rem;
+  padding: 2rem 0 2.5rem;
 }
 
-.calendar-box,
+.calendar-day,
 .calendar-weekday {
   font-size: 0.8rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .weekday,
@@ -371,9 +381,15 @@ input[type="text"]:focus {
   text-align: center;
 }
 
-.calendar-box,
-.calendar-weekday {
-  margin-bottom: 1rem;
+.selected-day {
+  background-color: #ff4f00;
+  color: #fafafa;
+  border-radius: 3px;
+}
+
+.calendar-day {
+  gap: 0.8rem 0.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .inactive {
