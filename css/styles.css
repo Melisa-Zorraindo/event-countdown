@@ -67,7 +67,9 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #ff4f00;
 }
 
 .timer-container {
@@ -196,11 +198,14 @@ button:hover {
 .button-container {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   padding: 0.5rem;
 }
 
 .modal-windows-container .close {
   background-color: var(--background-window-default);
+  border: 1px solid var(--borders);
+  border-radius: 3px;
 }
 
 .save-btn-container {
