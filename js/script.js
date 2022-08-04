@@ -1,9 +1,10 @@
 import { enableDarkMode, disableDarkMode } from "./settings/themes.js";
 import { closeModal } from "./modalPopups/commonFunctions/closeModalBoxes.js";
 import { displayBgEditionOptions } from "./modalPopups/background/modalBackground.js";
-// import { displayHeadingEditionOptions } from "./modalPopups/headingModal.js";
 import { displayCalendar } from "./modalPopups/eventWindow/calendar.js";
-import { displayTitleEditionWindow } from "./modalPopups/styles/titleEditionWindow.js";
+import { displayTitleEditionWindow } from "./modalPopups/styles/headingStylesWindow/titleEditionWindow.js";
+import { updateFontColour } from "./modalPopups/commonFunctions/selectColours.js";
+import { updateScreenBgColour } from "./modalPopups/commonFunctions/selectColours.js";
 
 // ---------- SET THEME ---------- //
 const modeContainer = document.querySelector("#themes-button");
@@ -46,9 +47,9 @@ closeCalendar.addEventListener("click", () => {
 
 // ----- Retrieve event title local storage if any ----- //
 let eventTitle = localStorage.getItem("eventTitle");
-const eventName = document.querySelector("h1");
+const EVENT_NAME = document.querySelector("h1");
 
-eventName.innerHTML = eventTitle || "Event title";
+EVENT_NAME.innerHTML = eventTitle || "Event title";
 
 // ---------- STYLE OPTIONS ---------- //
 
@@ -90,15 +91,40 @@ HEADING_EDITION_WINDOW_CLOSE_BUTTON.addEventListener("click", () => {
   closeModal(HEADING_EDITION_WINDOW);
 });
 
-// ----- Retrieve background colour from local storage if any ----- //
-let screenColour = localStorage.getItem("screenColour");
-const body = document.querySelector("body");
-if (screenColour) {
-  updateBgColour(body, screenColour);
+// ----- Retrieve heading bg colour from local storage if any ----- //
+const HEADING_BG_COLOUR = localStorage.getItem("headingBgColour");
+
+if (HEADING_BG_COLOUR) {
+  updateScreenBgColour(EVENT_NAME, HEADING_BG_COLOUR);
 }
 
-function updateBgColour(elem, localStorageKey) {
-  elem.style.backgroundColor = localStorageKey;
+// ----- Retrieve heading font colour from local storage if any ----- //
+const HEADING_FONT_COLOUR = localStorage.getItem("headingFontColour");
+
+if (HEADING_FONT_COLOUR) {
+  updateFontColour(EVENT_NAME, HEADING_FONT_COLOUR);
+}
+
+// ----- Retrieve heading font from local storage if any ----- //
+const eventDays = document.querySelector("#days");
+const eventHours = document.querySelector("#hours");
+const eventMinutes = document.querySelector("#minutes");
+const eventSeconds = document.querySelector("#seconds");
+
+let eventFonts = JSON.parse(localStorage.getItem("fonts"));
+if (eventFonts) {
+  EVENT_NAME.style.fontFamily = eventFonts;
+  eventDays.style.fontFamily = eventFonts;
+  eventHours.style.fontFamily = eventFonts;
+  eventMinutes.style.fontFamily = eventFonts;
+  eventSeconds.style.fontFamily = eventFonts;
+}
+
+// ----- Retrieve background colour from local storage if any ----- //
+let screenColour = localStorage.getItem("screenColour");
+const BODY = document.querySelector("body");
+if (screenColour) {
+  updateScreenBgColour(BODY, screenColour);
 }
 
 // ----- Retrieve background image from local storage if any ----- //
@@ -112,45 +138,6 @@ function updateBackgroundImage(localStorageKey) {
 }
 
 // ---------- HEADING ---------- //
-
-// ----- Open heading edition window ----- //
-/* const headingModal = document.querySelector("#heading-modal");
-headlineButton.addEventListener("click", () => {
-  OVERLAY.classList.remove("hidden");
-  headingModal.classList.remove("hidden");
-  displayHeadingEditionOptions(headingModal);
-}); */
-
-// ----- Retrieve heading bg colour from local storage if any ----- //
-let headingBgColour = localStorage.getItem("headingBgColour");
-if (headingBgColour) {
-  updateBgColour(eventName, headingBgColour);
-}
-
-// ----- Retrieve heading font colour from local storage if any ----- //
-let headingFontColour = localStorage.getItem("headingFontColour");
-if (headingFontColour) {
-  updateFontColour(eventName, headingFontColour);
-}
-
-function updateFontColour(elem, localStorageKey) {
-  elem.style.color = localStorageKey;
-}
-
-// ----- Retrieve heading font from local storage if any ----- //
-const eventDays = document.querySelector("#days");
-const eventHours = document.querySelector("#hours");
-const eventMinutes = document.querySelector("#minutes");
-const eventSeconds = document.querySelector("#seconds");
-
-let eventFonts = JSON.parse(localStorage.getItem("fonts"));
-if (eventFonts) {
-  eventName.style.fontFamily = eventFonts;
-  eventDays.style.fontFamily = eventFonts;
-  eventHours.style.fontFamily = eventFonts;
-  eventMinutes.style.fontFamily = eventFonts;
-  eventSeconds.style.fontFamily = eventFonts;
-}
 
 // ---------- COUNTDOWN LOGIC ---------- //
 const arrivalDate = new Date("09/28/2022");
@@ -166,7 +153,7 @@ function countDown() {
   if (timeSpan <= 0) {
     // ----- Retrieve final message from local storage if any ----- //
     let storedMessage = localStorage.getItem("finalMessage");
-    eventName.innerHTML = storedMessage || "The wait is over!";
+    EVENT_NAME.innerHTML = storedMessage || "The wait is over!";
 
     // ----- Clear timer ----- //
     const counter = document.querySelector(".timer");

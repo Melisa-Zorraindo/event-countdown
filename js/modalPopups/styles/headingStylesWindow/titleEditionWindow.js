@@ -1,4 +1,5 @@
-import { displayColourSelector } from "../commonFunctions/displayColourPicker.js";
+import { displayColourSelector } from "../../commonFunctions/displayColourPicker.js";
+import { updateFont } from "./fonts.js";
 
 const HEADING_EDITION_WINDOW = document.querySelector(
   "#heading-edition-window"
@@ -29,3 +30,9 @@ export function displayTitleEditionWindow() {
     "bg-colour-selector"
   );
 }
+
+const FONT = document.querySelector("#font-selection");
+
+FONT.addEventListener("change", () => {
+  updateFont(FONT.value);
+});

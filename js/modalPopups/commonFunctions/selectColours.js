@@ -19,3 +19,11 @@ export function changeHeadingFontColour(hue) {
   eventTitle.style.color = hue;
   localStorage.setItem("headingFontColour", hue);
 }
+
+export function updateFontColour(elem, localStorageKey) {
+  elem.style.color = localStorageKey;
+}
+
+export function updateScreenBgColour(elem, localStorageKey) {
+  elem.style.backgroundColor = localStorageKey;
+}
