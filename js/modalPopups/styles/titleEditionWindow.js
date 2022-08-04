@@ -1,4 +1,4 @@
-import { createColourSelector } from "../commonFunctions/createColourPicker.js";
+import { displayColourSelector } from "../commonFunctions/displayColourPicker.js";
 
 const HEADING_EDITION_WINDOW = document.querySelector(
   "#heading-edition-window"
@@ -15,7 +15,7 @@ export function displayTitleEditionWindow() {
 
   //create font colour picker
   HEADING_FONT_COLOUR.innerHTML = "";
-  createColourSelector(
+  displayColourSelector(
     HEADING_FONT_COLOUR,
     "Select font colour",
     "font-colour-selector"
@@ -23,7 +23,7 @@ export function displayTitleEditionWindow() {
 
   //create event bg colour picker
   HEADING_BG.innerHTML = "";
-  createColourSelector(
+  displayColourSelector(
     HEADING_BG,
     "Select background colour",
     "bg-colour-selector"

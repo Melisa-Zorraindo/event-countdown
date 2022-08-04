@@ -1,3 +1,4 @@
+import { displayColourSelector } from "../commonFunctions/displayColourPicker.js";
 import { changeColour } from "../commonFunctions/selectColours.js";
 import { ACCESS_KEY } from "./apikey.js";
 import { fetchPhotos } from "./apiCall.js";
@@ -14,7 +15,8 @@ const photos = await fetchPhotos(
 export function displayBgEditionOptions() {
   //create colour picker
   colourPicker.innerHTML = "";
-  createColourPicker(colourPicker);
+  // createColourPicker(colourPicker);
+  displayColourSelector(colourPicker, "Solid colour", "screen-bg-colour");
 
   // createPhotoSelector
   photoContainer.innerHTML = "";
@@ -42,7 +44,7 @@ export function displayBgEditionOptions() {
   });
 }
 
-function createColourPicker(container) {
+/* function createColourPicker(container) {
   //create label
   const colourPickerLabel = document.createElement("label");
   colourPickerLabel.innerHTML = "Solid colour";
@@ -58,7 +60,7 @@ function createColourPicker(container) {
     const body = document.querySelector("body");
     changeColour(body, colourPicker, "screenColour");
   });
-}
+} */
 
 function createImageSelector(img) {
   let figure = document.createElement("figure");

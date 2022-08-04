@@ -48,7 +48,7 @@ const eventSeconds = document.querySelector("#seconds");
   });
 } */
 
-function changeHeadingBgColour(hue) {
+/* function changeHeadingBgColour(hue) {
   eventTitle.style.backgroundColor = hue;
   localStorage.setItem("headingBgColour", hue);
 }
@@ -56,7 +56,7 @@ function changeHeadingBgColour(hue) {
 function changeHeadingFontColour(hue) {
   eventTitle.style.color = hue;
   localStorage.setItem("headingFontColour", hue);
-}
+} */
 
 /* const newtitle = document.querySelector("#event-name");
 function updateEventTitle(e) {
