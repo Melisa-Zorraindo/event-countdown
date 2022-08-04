@@ -58,7 +58,7 @@ function changeHeadingFontColour(hue) {
   localStorage.setItem("headingFontColour", hue);
 }
 
-const newtitle = document.querySelector("#event-name");
+/* const newtitle = document.querySelector("#event-name");
 function updateEventTitle(e) {
   let title = newtitle.value;
   eventTitle.innerHTML = "";
@@ -68,7 +68,7 @@ function updateEventTitle(e) {
 
 newtitle.addEventListener("keyup", (e) => {
   updateEventTitle(e);
-});
+}); */
 
 const newFont = document.querySelector("#font-selection");
 function updateFont(font) {
@@ -129,11 +129,16 @@ newFont.addEventListener("change", () => {
   updateFont(newFont.value);
 });
 
-const finalMessage = document.querySelector("#event-date-message");
+/* const finalMessage = document.querySelector("#final-message");
 finalMessage.addEventListener("keyup", () => {
+  setFinalMessage();
+});
+
+function setFinalMessage() {
   let newFinalMessage = finalMessage.value;
   finalMessage.innerHTML = "";
   finalMessage.innerHTML = newFinalMessage;
 
   localStorage.setItem("finalMessage", newFinalMessage);
-});
+}
+ */

@@ -48,7 +48,7 @@
           <i class="fas fa-image"></i>
         </button> -->
         <div class="heading-container">
-          <h1>Event title</h1>
+          <h1></h1>
           <!-- <button aria-label="edit headline" class="headline-edition-button">
             <span class="sr-only">edit headline</span>
             <i class="fas fa-pencil-alt"></i>
@@ -82,16 +82,36 @@
           </button> -->
         </div>
       </div>
+      <nav id="second-navigation" class="second-nav hidden">
+        <button aria-label="edit-title" id="edit-title-styles">
+          <span class="sr-only">edit-title</span>
+          <i class="fas fa-heading"></i>
+          <p>title</p>
+        </button>
+        <button aria-label="edit-timer" id="edit-timer">
+          <span class="sr-only">edit-timer</span>
+          <i class="far fa-clock"></i>
+          <p id="edit-timer-styles">timer</p>
+        </button>
+        <button aria-label="">
+          <span class="sr-only"></span>
+          <i class="far fa-image"></i>
+          <p id="edit-bg-styles">image</p>
+        </button>
+        <button class="close sec-nav-close" id="sec-nav-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </nav>
       <nav>
-        <button id="themes-button">
-          <i class="fas fa-moon"></i>
-          <i class="fas fa-sun hidden"></i>
+        <button aria-label="set theme" id="themes-button">
+          <i class="far fa-moon"></i>
+          <i class="far fa-sun hidden"></i>
           <p>themes</p>
         </button>
-        <button aria-label="edit timer" class="countdown-edition-button">
+        <button aria-label="edit timer" id="timer-edition-button">
           <span class="sr-only">edit timer</span>
-          <i class="fas fa-calendar-alt"></i>
-          <p id="">event</p>
+          <i class="far fa-calendar-alt"></i>
+          <p>event</p>
         </button>
         <button aria-label="edit background" class="background-edition-button">
           <span class="sr-only">edit background</span>
@@ -164,22 +184,13 @@
           </div> -->
         </div>
       </div>
-      <div class="modal-windows-container hidden" id="modal-calendar">
+      <div class="modal-windows-container hidden" id="event-edition-window">
         <div class="button-container">
           <h2>Edit event</h2>
-          <button class="close" id="close-calender-modal">
+          <button class="close" id="close-event-edition-window">
             <i class="fas fa-times"></i>
           </button>
         </div>
-        <!-- <div class="modal-box modal-box-medium">
-          <label for="event-name">Type event name</label>
-          <input
-            type="text"
-            id="event-name"
-            class="field"
-            placeholder="Trip to California"
-          />
-        </div> -->
         <div class="section">
           <div>
             <label for="event-name">Type event name</label>
@@ -213,10 +224,10 @@
         </div>
         <div class="section">
           <div>
-            <label for="event-date-message">Type final message</label>
+            <label for="final-message">Type final message</label>
             <input
               type="text"
-              id="event-date-message"
+              id="final-message"
               class="field last-field"
               placeholder="Happy Holidays!"
             />
@@ -225,18 +236,11 @@
         <div class="save-btn-container">
           <button>Save</button>
         </div>
-        <!-- <div class="modal-box modal-box-medium last-modal-medium">
-          <label for="event-date-message">Type final message</label>
-          <input
-            type="text"
-            id="event-date-message"
-            class="field last-field"
-            placeholder="Happy Holidays!"
-          />
-        </div> -->
       </div>
     </main>
     <div class="overlay hidden"></div>
     <script src="/js/script.js" type="module"></script>
+    <script src="/js/modalPopups/eventWindow/eventName.js"></script>
+    <script src="/js/modalPopups/eventWindow/finalMessage.js"></script>
   </body>
 </html>
