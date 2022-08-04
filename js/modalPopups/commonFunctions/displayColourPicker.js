@@ -1,6 +1,6 @@
 import { changeHeadingBgColour } from "./selectColours.js";
 import { changeHeadingFontColour } from "./selectColours.js";
-import { changeColour } from "./selectColours.js";
+import { changeScreenBgColour } from "./selectColours.js";
 
 export function displayColourSelector(container, labelName, id) {
   //create label
@@ -30,7 +30,7 @@ export function displayColourSelector(container, labelName, id) {
 
       case "screen-bg-colour":
         const body = document.querySelector("body");
-        changeColour(body, colourPicker, "screenColour");
+        changeScreenBgColour(body, colourPicker, "screenColour");
         break;
     }
   });
