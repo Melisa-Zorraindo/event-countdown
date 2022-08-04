@@ -53,7 +53,7 @@ eventName.innerHTML = eventTitle || "Event title";
 
 const STYLES_BUTTON = document.querySelector(".background-edition-button");
 
-// ----- Open background edition window ----- //
+// ----- Open second navigation bar ----- //
 // const modalWindowContainer = document.querySelector("#bg-modal");
 const SECOND_NAVBAR = document.querySelector("#second-navigation");
 
@@ -63,7 +63,7 @@ STYLES_BUTTON.addEventListener("click", () => {
   document.body.style.overflow = "hidden";
 });
 
-// ----- Close background edition window ----- //
+// ----- Close second navigation bar ----- //
 const SECOND_NAVBAR_CLOSE_BUTTON = document.querySelector("#sec-nav-close");
 SECOND_NAVBAR_CLOSE_BUTTON.addEventListener("click", () => {
   OVERLAY.classList.add("hidden");
