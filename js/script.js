@@ -28,16 +28,18 @@ const eventEditionButton = document.querySelector("#timer-edition-button");
 const calendarModal = document.querySelector("#event-edition-window");
 const closeCalendar = document.querySelector("#close-event-edition-window");
 
+const OVERLAY = document.querySelector(".overlay");
+
 // ----- Open event edition modal ----- //
 eventEditionButton.addEventListener("click", () => {
-  overylay.classList.remove("hidden");
+  OVERLAY.classList.remove("hidden");
   calendarModal.classList.remove("hidden");
   displayCalendar();
 });
 
 // ----- Close event edition modal ----- //
 closeCalendar.addEventListener("click", () => {
-  overylay.classList.add("hidden");
+  OVERLAY.classList.add("hidden");
   closeModal(calendarModal);
 });
 
@@ -47,22 +49,26 @@ const eventName = document.querySelector("h1");
 
 eventName.innerHTML = eventTitle || "Event title";
 
-const bgEditBtn = document.querySelector(".background-edition-button");
+// ---------- STYLE OPTIONS ---------- //
+
+const STYLES_BUTTON = document.querySelector(".background-edition-button");
 
 // ----- Open background edition window ----- //
-const overylay = document.querySelector(".overlay");
-const modalWindowContainer = document.querySelector("#bg-modal");
-bgEditBtn.addEventListener("click", () => {
-  overylay.classList.remove("hidden");
-  modalWindowContainer.classList.remove("hidden");
-  displayBgEditionOptions(modalWindowContainer);
+// const modalWindowContainer = document.querySelector("#bg-modal");
+const SECOND_NAVBAR = document.querySelector("#second-navigation");
+
+STYLES_BUTTON.addEventListener("click", () => {
+  OVERLAY.classList.remove("hidden");
+  SECOND_NAVBAR.classList.remove("hidden");
+  document.body.style.overflow = "hidden";
 });
 
 // ----- Close background edition window ----- //
-const closeBtn = document.querySelector("#close-bg-modal");
-closeBtn.addEventListener("click", () => {
-  overylay.classList.add("hidden");
-  closeModal(modalWindowContainer);
+const SECOND_NAVBAR_CLOSE_BUTTON = document.querySelector("#sec-nav-close");
+SECOND_NAVBAR_CLOSE_BUTTON.addEventListener("click", () => {
+  OVERLAY.classList.add("hidden");
+  SECOND_NAVBAR.classList.add("hidden");
+  document.body.style.overflow = "auto";
 });
 
 // ----- Retrieve background colour from local storage if any ----- //
@@ -91,7 +97,7 @@ function updateBackgroundImage(localStorageKey) {
 // ----- Open heading edition window ----- //
 /* const headingModal = document.querySelector("#heading-modal");
 headlineButton.addEventListener("click", () => {
-  overylay.classList.remove("hidden");
+  OVERLAY.classList.remove("hidden");
   headingModal.classList.remove("hidden");
   displayHeadingEditionOptions(headingModal);
 }); */
@@ -99,7 +105,7 @@ headlineButton.addEventListener("click", () => {
 // ----- Close heading edition window ----- //
 const closeModalWindow = document.querySelector("#close-title-edition");
 closeModalWindow.addEventListener("click", () => {
-  overylay.classList.add("hidden");
+  OVERLAY.classList.add("hidden");
   closeModal(headingModal);
 });
 
