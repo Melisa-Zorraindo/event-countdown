@@ -19,25 +19,7 @@
     <title>Event countdown</title>
   </head>
   <body>
-    <!-- <header>
-      <button aria-label="settings" class="settings-button">
-        <span class="sr-only">settings</span>
-        <i class="fas fa-cog"></i>
-      </button>
-    </header> -->
     <main>
-      <!-- <div class="settings-menu hidden">
-        <div class="mode-container">
-          <i class="fas fa-moon"></i>
-          <i class="fas fa-sun hidden"></i>
-          <p id="theme-para">dark mode</p>
-        </div>
-        <div class="button-visibility-container">
-          <i class="fas fa-eye hidden" id="eye-icon"></i>
-          <i class="fas fa-eye-slash" id="eye-slash-icon"></i>
-          <p id="visibility-para">hide buttons</p>
-        </div>
-      </div> -->
       <div class="container">
         <!--  <button
           aria-label="edit background"
@@ -139,12 +121,12 @@
         </div>
       </div>
       <div id="heading-modal" class="modal-windows-container hidden">
-        <div class="button-container">
+        <!-- <div class="button-container">
           <h2>Edit event name</h2>
           <button class="close" id="close-title-edition">
             <i class="fas fa-times"></i>
           </button>
-        </div>
+        </div> -->
         <div class="medium-sized-modal-container">
           <!-- <div class="modal-box modal-box-medium">
             <label for="event-name">Type event name</label>
@@ -155,7 +137,7 @@
               placeholder="Trip to California"
             />
           </div> -->
-          <div class="modal-box modal-box-medium">
+          <!--  <div class="modal-box modal-box-medium">
             <label for="font-selection">Select font</label>
             <select name="font" id="font-selection" class="field">
               <option value="sans-serif">Poppins</option>
@@ -164,15 +146,15 @@
               <option value="serif">Josefin Slab</option>
               <option value="monospace">Inconsolata</option>
             </select>
-          </div>
-          <div
+          </div> -->
+          <!-- <div
             class="modal-box modal-box-medium"
             id="bg-colour-event-name-picker"
           ></div>
           <div
             class="modal-box modal-box-medium"
             id="font-colour-event-name-picker"
-          ></div>
+          ></div> -->
           <!--  <div class="modal-box modal-box-medium last-modal-medium">
             <label for="event-date-message">Type final message</label>
             <input
@@ -202,7 +184,7 @@
             />
           </div>
         </div>
-        <div id="calendar-container" class="calendar-container">
+        <div id="calendar-container" class="section">
           <div>
             <label for="header">Choose event date</label>
             <div id="header" class="calendar-header">
@@ -232,6 +214,33 @@
               placeholder="Happy Holidays!"
             />
           </div>
+        </div>
+        <div class="save-btn-container">
+          <button>Save</button>
+        </div>
+      </div>
+      <div class="modal-windows-container hidden" id="heading-edition-window">
+        <div class="button-container">
+          <h2>Edit heading</h2>
+          <button class="close" id="close-heading-edition-window">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="section">
+          <label for="font-selection">Select font</label>
+          <select name="font" id="font-selection" class="field">
+            <option value="sans-serif">Poppins</option>
+            <option value="cursive">Happy Monkey</option>
+            <option value="handwriting">Dancing Script</option>
+            <option value="serif">Josefin Slab</option>
+            <option value="monospace">Inconsolata</option>
+          </select>
+        </div>
+        <div class="section">
+          <div class="field" id="font-colour-event-name-picker"></div>
+        </div>
+        <div class="section">
+          <div class="field" id="bg-colour-event-name-picker"></div>
         </div>
         <div class="save-btn-container">
           <button>Save</button>

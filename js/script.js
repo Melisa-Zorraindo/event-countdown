@@ -3,6 +3,7 @@ import { closeModal } from "./modalPopups/commonFunctions/closeModalBoxes.js";
 import { displayBgEditionOptions } from "./modalPopups/background/modalBackground.js";
 // import { displayHeadingEditionOptions } from "./modalPopups/headingModal.js";
 import { displayCalendar } from "./modalPopups/eventWindow/calendar.js";
+import { displayTitleEditionWindow } from "./modalPopups/styles/titleEditionWindow.js";
 
 // ---------- SET THEME ---------- //
 const modeContainer = document.querySelector("#themes-button");
@@ -60,7 +61,6 @@ const SECOND_NAVBAR = document.querySelector("#second-navigation");
 STYLES_BUTTON.addEventListener("click", () => {
   OVERLAY.classList.remove("hidden");
   SECOND_NAVBAR.classList.remove("hidden");
-  document.body.style.overflow = "hidden";
 });
 
 // ----- Close second navigation bar ----- //
@@ -68,7 +68,26 @@ const SECOND_NAVBAR_CLOSE_BUTTON = document.querySelector("#sec-nav-close");
 SECOND_NAVBAR_CLOSE_BUTTON.addEventListener("click", () => {
   OVERLAY.classList.add("hidden");
   SECOND_NAVBAR.classList.add("hidden");
-  document.body.style.overflow = "auto";
+});
+
+// ----- Open title edition window ----- //
+const EDIT_TITLE_BUTTON = document.querySelector("#edit-title-styles");
+
+EDIT_TITLE_BUTTON.addEventListener("click", () => {
+  SECOND_NAVBAR.classList.add("hidden");
+  displayTitleEditionWindow();
+});
+
+// ----- Close title edition window ----- //
+const HEADING_EDITION_WINDOW = document.querySelector(
+  "#heading-edition-window"
+);
+const HEADING_EDITION_WINDOW_CLOSE_BUTTON = document.querySelector(
+  "#close-heading-edition-window"
+);
+HEADING_EDITION_WINDOW_CLOSE_BUTTON.addEventListener("click", () => {
+  OVERLAY.classList.add("hidden");
+  closeModal(HEADING_EDITION_WINDOW);
 });
 
 // ----- Retrieve background colour from local storage if any ----- //
@@ -101,13 +120,6 @@ headlineButton.addEventListener("click", () => {
   headingModal.classList.remove("hidden");
   displayHeadingEditionOptions(headingModal);
 }); */
-
-// ----- Close heading edition window ----- //
-const closeModalWindow = document.querySelector("#close-title-edition");
-closeModalWindow.addEventListener("click", () => {
-  OVERLAY.classList.add("hidden");
-  closeModal(headingModal);
-});
 
 // ----- Retrieve heading bg colour from local storage if any ----- //
 let headingBgColour = localStorage.getItem("headingBgColour");

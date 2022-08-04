@@ -1,14 +1,14 @@
-const eventHeadingBg = document.querySelector("#bg-colour-event-name-picker");
+/* const eventHeadingBg = document.querySelector("#bg-colour-event-name-picker");
 const eventHeadingFontColour = document.querySelector(
   "#font-colour-event-name-picker"
-);
+); */
 const eventTitle = document.querySelector("h1");
 const eventDays = document.querySelector("#days");
 const eventHours = document.querySelector("#hours");
 const eventMinutes = document.querySelector("#minutes");
 const eventSeconds = document.querySelector("#seconds");
 
-export function displayHeadingEditionOptions() {
+/* export function displayHeadingEditionOptions() {
   //create event bg colour picker
   eventHeadingBg.innerHTML = "";
   createColourSelector(
@@ -24,9 +24,9 @@ export function displayHeadingEditionOptions() {
     "Font colour",
     "font-colour-selector"
   );
-}
+} */
 
-function createColourSelector(container, labelName, id) {
+/* function createColourSelector(container, labelName, id) {
   //create label
   const label = document.createElement("label");
   label.innerHTML = labelName;
@@ -46,7 +46,7 @@ function createColourSelector(container, labelName, id) {
       changeHeadingFontColour(hue);
     }
   });
-}
+} */
 
 function changeHeadingBgColour(hue) {
   eventTitle.style.backgroundColor = hue;
