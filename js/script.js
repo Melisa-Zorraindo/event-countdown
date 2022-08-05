@@ -1,12 +1,12 @@
 import { enableDarkMode, disableDarkMode } from "./settings/themes.js";
 import { closeModal } from "./modalPopups/commonFunctions/closeModalBoxes.js";
-import { displayBgEditionOptions } from "./modalPopups/background/modalBackground.js";
 import { displayCalendar } from "./modalPopups/eventWindow/calendar.js";
 import { displayTitleEditionWindow } from "./modalPopups/styles/headingStylesWindow/titleEditionWindow.js";
 import { updateFontColour } from "./modalPopups/commonFunctions/selectColours.js";
 import { updateScreenBgColour } from "./modalPopups/commonFunctions/selectColours.js";
 import { displayTimerEditionWindow } from "./modalPopups/styles/countdownStylesWindow/timerEditionWindow.js";
 import { displayBackgroundEditionWindow } from "./modalPopups/styles/backgroundStylesWindow/backgroundEditionWindow.js";
+import { updateBackgroundImage } from "./modalPopups/styles/backgroundStylesWindow/backgroundEditionWindow.js";
 
 // ---------- SET THEME ---------- //
 const modeContainer = document.querySelector("#themes-button");
@@ -58,7 +58,6 @@ EVENT_NAME.innerHTML = eventTitle || "Event title";
 const STYLES_BUTTON = document.querySelector(".background-edition-button");
 
 // ----- Open second navigation bar ----- //
-// const modalWindowContainer = document.querySelector("#bg-modal");
 const SECOND_NAVBAR = document.querySelector("#second-navigation");
 
 STYLES_BUTTON.addEventListener("click", () => {
@@ -188,10 +187,6 @@ if (screenBackgroundImage) {
   updateBackgroundImage(screenBackgroundImage);
 }
 
-function updateBackgroundImage(localStorageKey) {
-  document.body.style.background = `url("${localStorageKey}") center/cover no-repeat`;
-}
-
 // ---------- COUNTDOWN LOGIC ---------- //
 const arrivalDate = new Date("09/28/2022");
 const second = 1000;
@@ -234,4 +229,4 @@ function countDown() {
   }
 }
 
-// setInterval(countDown, 1000);
+setInterval(countDown, 1000);

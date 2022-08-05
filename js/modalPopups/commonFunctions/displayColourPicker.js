@@ -1,6 +1,3 @@
-// import { changeHeadingBgColour } from "./selectColours.js";
-// import { changeHeadingFontColour } from "./selectColours.js";
-// import { changeScreenBgColour } from "./selectColours.js";
 import { changeFontColour } from "./selectColours.js";
 import { changeBackgroundColour } from "./selectColours.js";
 
@@ -14,12 +11,14 @@ export function displayColourSelector(container, labelName, id) {
   LABEL.classList.add("colour-picker-label");
   LABEL.innerHTML = labelName;
   container.append(LABEL);
+
   //create colour selector
   const colourPicker = document.createElement("input");
   colourPicker.type = "color";
   colourPicker.id = id;
   colourPicker.value = " ";
   container.append(colourPicker);
+
   //add event listener
   colourPicker.addEventListener("change", () => {
     const HUE = colourPicker.value;
@@ -27,12 +26,10 @@ export function displayColourSelector(container, labelName, id) {
 
     switch (ID) {
       case "bg-colour-selector":
-        // changeHeadingBgColour(HUE);
         changeBackgroundColour(EVENT_NAME, HUE, "headingBgColour");
         break;
 
       case "font-colour-selector":
-        // changeHeadingFontColour(HUE);
         changeFontColour(EVENT_NAME, HUE, "headingFontColour");
         break;
 
@@ -45,8 +42,6 @@ export function displayColourSelector(container, labelName, id) {
 
       case "screen-bg-colour-selector":
         changeBackgroundColour(BODY, HUE, "screenColour");
-        // const body = document.querySelector("body");
-        // changeScreenBgColour(body, colourPicker, "screenColour");
         break;
     }
   });
