@@ -9,6 +9,5 @@ function updateEventTitle(e) {
 }
 
 newHeading.addEventListener("keyup", (e) => {
-  console.log(e);
   updateEventTitle(e);
 });

@@ -5,6 +5,7 @@ import { displayCalendar } from "./modalPopups/eventWindow/calendar.js";
 import { displayTitleEditionWindow } from "./modalPopups/styles/headingStylesWindow/titleEditionWindow.js";
 import { updateFontColour } from "./modalPopups/commonFunctions/selectColours.js";
 import { updateScreenBgColour } from "./modalPopups/commonFunctions/selectColours.js";
+import { displayTimerEditionWindow } from "./modalPopups/styles/countdownStylesWindow/timerEditionWindow.js";
 
 // ---------- SET THEME ---------- //
 const modeContainer = document.querySelector("#themes-button");
@@ -119,6 +120,26 @@ if (eventFonts) {
   eventMinutes.style.fontFamily = eventFonts;
   eventSeconds.style.fontFamily = eventFonts;
 }
+
+// ----- Open timer edition window ----- //
+const TIMER = document.querySelector("#edit-timer");
+const TIMER_EDITION_WINDOW = document.querySelector("#timer-edition-window");
+
+TIMER.addEventListener("click", () => {
+  // TIMER_EDITION_WINDOW.classList.remove("hidden");
+  SECOND_NAVBAR.classList.add("hidden");
+  displayTimerEditionWindow();
+});
+
+// ----- Open timer edition window ----- //
+const TIMER_EDITION_WINDOW_CLOSE_BUTTON = document.querySelector(
+  "#close-timer-edition-window"
+);
+
+TIMER_EDITION_WINDOW_CLOSE_BUTTON.addEventListener("click", () => {
+  OVERLAY.classList.add("hidden");
+  closeModal(TIMER_EDITION_WINDOW);
+});
 
 // ----- Retrieve background colour from local storage if any ----- //
 let screenColour = localStorage.getItem("screenColour");
