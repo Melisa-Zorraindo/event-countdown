@@ -126,12 +126,11 @@ const TIMER = document.querySelector("#edit-timer");
 const TIMER_EDITION_WINDOW = document.querySelector("#timer-edition-window");
 
 TIMER.addEventListener("click", () => {
-  // TIMER_EDITION_WINDOW.classList.remove("hidden");
   SECOND_NAVBAR.classList.add("hidden");
   displayTimerEditionWindow();
 });
 
-// ----- Open timer edition window ----- //
+// ----- Close timer edition window ----- //
 const TIMER_EDITION_WINDOW_CLOSE_BUTTON = document.querySelector(
   "#close-timer-edition-window"
 );
@@ -140,6 +139,21 @@ TIMER_EDITION_WINDOW_CLOSE_BUTTON.addEventListener("click", () => {
   OVERLAY.classList.add("hidden");
   closeModal(TIMER_EDITION_WINDOW);
 });
+
+// ----- Retrieve timer bg colour from local storage if any ----- //
+const CLOCK = document.querySelector("#timer");
+const TIMER_BG_COLOUR = localStorage.getItem("timerBgColour");
+
+if (TIMER_BG_COLOUR) {
+  updateScreenBgColour(CLOCK, TIMER_BG_COLOUR);
+}
+
+// ----- Retrieve timer font colour from local storage if any ----- //
+const TIMER_FONT_COLOUR = localStorage.getItem("timerFontColour");
+
+if (TIMER_FONT_COLOUR) {
+  updateFontColour(CLOCK, TIMER_FONT_COLOUR);
+}
 
 // ----- Retrieve background colour from local storage if any ----- //
 let screenColour = localStorage.getItem("screenColour");

@@ -1,6 +1,11 @@
-import { changeHeadingBgColour } from "./selectColours.js";
-import { changeHeadingFontColour } from "./selectColours.js";
-import { changeScreenBgColour } from "./selectColours.js";
+// import { changeHeadingBgColour } from "./selectColours.js";
+// import { changeHeadingFontColour } from "./selectColours.js";
+// import { changeScreenBgColour } from "./selectColours.js";
+import { changeFontColour } from "./selectColours.js";
+import { changeBackgroundColour } from "./selectColours.js";
+
+const EVENT_NAME = document.querySelector("h1");
+const CLOCK = document.querySelector("#timer");
 
 export function displayColourSelector(container, labelName, id) {
   //create label
@@ -21,16 +26,25 @@ export function displayColourSelector(container, labelName, id) {
 
     switch (ID) {
       case "bg-colour-selector":
-        changeHeadingBgColour(HUE);
+        // changeHeadingBgColour(HUE);
+        changeBackgroundColour(EVENT_NAME, HUE, "headingBgColour");
         break;
 
       case "font-colour-selector":
-        changeHeadingFontColour(HUE);
+        // changeHeadingFontColour(HUE);
+        changeFontColour(EVENT_NAME, HUE, "headingFontColour");
         break;
+
+      case "timer-font-colour-selector":
+        changeFontColour(CLOCK, HUE, "timerFontColour");
+        break;
+
+      case "timer-bg-colour-selector":
+        changeBackgroundColour(CLOCK, HUE, "timerBgColour");
 
       case "screen-bg-colour":
         const body = document.querySelector("body");
-        changeScreenBgColour(body, colourPicker, "screenColour");
+        // changeScreenBgColour(body, colourPicker, "screenColour");
         break;
     }
   });

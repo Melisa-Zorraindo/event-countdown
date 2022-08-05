@@ -1,5 +1,5 @@
 import { displayColourSelector } from "../commonFunctions/displayColourPicker.js";
-import { changeScreenBgColour } from "../commonFunctions/selectColours.js";
+// import { changeScreenBgColour } from "../commonFunctions/selectColours.js";
 import { ACCESS_KEY } from "./apikey.js";
 import { fetchPhotos } from "./apiCall.js";
 import { setBackgroundImage } from "../commonFunctions/selectPicture.js";
