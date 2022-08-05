@@ -6,6 +6,7 @@ import { changeBackgroundColour } from "./selectColours.js";
 
 const EVENT_NAME = document.querySelector("h1");
 const CLOCK = document.querySelector("#timer");
+const BODY = document.querySelector("body");
 
 export function displayColourSelector(container, labelName, id) {
   //create label
@@ -42,8 +43,9 @@ export function displayColourSelector(container, labelName, id) {
       case "timer-bg-colour-selector":
         changeBackgroundColour(CLOCK, HUE, "timerBgColour");
 
-      case "screen-bg-colour":
-        const body = document.querySelector("body");
+      case "screen-bg-colour-selector":
+        changeBackgroundColour(BODY, HUE, "screenColour");
+        // const body = document.querySelector("body");
         // changeScreenBgColour(body, colourPicker, "screenColour");
         break;
     }

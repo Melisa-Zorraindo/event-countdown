@@ -6,6 +6,7 @@ import { displayTitleEditionWindow } from "./modalPopups/styles/headingStylesWin
 import { updateFontColour } from "./modalPopups/commonFunctions/selectColours.js";
 import { updateScreenBgColour } from "./modalPopups/commonFunctions/selectColours.js";
 import { displayTimerEditionWindow } from "./modalPopups/styles/countdownStylesWindow/timerEditionWindow.js";
+import { displayBackgroundEditionWindow } from "./modalPopups/styles/backgroundStylesWindow/backgroundEditionWindow.js";
 
 // ---------- SET THEME ---------- //
 const modeContainer = document.querySelector("#themes-button");
@@ -122,10 +123,10 @@ if (eventFonts) {
 }
 
 // ----- Open timer edition window ----- //
-const TIMER = document.querySelector("#edit-timer");
+const EDIT_TIMER_BUTTON = document.querySelector("#edit-timer-styles");
 const TIMER_EDITION_WINDOW = document.querySelector("#timer-edition-window");
 
-TIMER.addEventListener("click", () => {
+EDIT_TIMER_BUTTON.addEventListener("click", () => {
   SECOND_NAVBAR.classList.add("hidden");
   displayTimerEditionWindow();
 });
@@ -155,6 +156,25 @@ if (TIMER_FONT_COLOUR) {
   updateFontColour(CLOCK, TIMER_FONT_COLOUR);
 }
 
+// ----- Open background edition window ----- //
+const EDIT_BG_BUTTON = document.querySelector("#edit-bg-styles");
+const BG_EDITION_WINDOW = document.querySelector("#background-edition-window");
+
+EDIT_BG_BUTTON.addEventListener("click", () => {
+  SECOND_NAVBAR.classList.add("hidden");
+  displayBackgroundEditionWindow();
+});
+
+// ----- Close background edition window ----- //
+const BG_EDITION_WINDOW_CLOSE_BUTTON = document.querySelector(
+  "#close-background-edition-window"
+);
+
+BG_EDITION_WINDOW_CLOSE_BUTTON.addEventListener("click", () => {
+  OVERLAY.classList.add("hidden");
+  closeModal(BG_EDITION_WINDOW);
+});
+
 // ----- Retrieve background colour from local storage if any ----- //
 let screenColour = localStorage.getItem("screenColour");
 const BODY = document.querySelector("body");
@@ -171,8 +191,6 @@ if (screenBackgroundImage) {
 function updateBackgroundImage(localStorageKey) {
   document.body.style.background = `url("${localStorageKey}") center/cover no-repeat`;
 }
-
-// ---------- HEADING ---------- //
 
 // ---------- COUNTDOWN LOGIC ---------- //
 const arrivalDate = new Date("09/28/2022");
