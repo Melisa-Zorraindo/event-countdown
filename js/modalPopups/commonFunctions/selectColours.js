@@ -2,7 +2,7 @@ export function updateFontColour(elem, localStorageKey) {
   elem.style.color = localStorageKey;
 }
 
-export function updateScreenBgColour(elem, localStorageKey) {
+export function updateBackgroundColour(elem, localStorageKey) {
   elem.style.backgroundColor = localStorageKey;
 }
 

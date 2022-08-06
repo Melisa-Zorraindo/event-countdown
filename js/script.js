@@ -3,7 +3,7 @@ import { closeModal } from "./modalPopups/commonFunctions/closeModalBoxes.js";
 import { displayCalendar } from "./modalPopups/eventWindow/calendar.js";
 import { displayTitleEditionWindow } from "./modalPopups/styles/headingStylesWindow/titleEditionWindow.js";
 import { updateFontColour } from "./modalPopups/commonFunctions/selectColours.js";
-import { updateScreenBgColour } from "./modalPopups/commonFunctions/selectColours.js";
+import { updateBackgroundColour } from "./modalPopups/commonFunctions/selectColours.js";
 import { displayTimerEditionWindow } from "./modalPopups/styles/countdownStylesWindow/timerEditionWindow.js";
 import { displayBackgroundEditionWindow } from "./modalPopups/styles/backgroundStylesWindow/backgroundEditionWindow.js";
 import { updateBackgroundImage } from "./modalPopups/styles/backgroundStylesWindow/backgroundEditionWindow.js";
@@ -96,7 +96,7 @@ HEADING_EDITION_WINDOW_CLOSE_BUTTON.addEventListener("click", () => {
 const HEADING_BG_COLOUR = localStorage.getItem("headingBgColour");
 
 if (HEADING_BG_COLOUR) {
-  updateScreenBgColour(EVENT_NAME, HEADING_BG_COLOUR);
+  updateBackgroundColour(EVENT_NAME, HEADING_BG_COLOUR);
 }
 
 // ----- Retrieve heading font colour from local storage if any ----- //
@@ -145,7 +145,7 @@ const CLOCK = document.querySelector("#timer");
 const TIMER_BG_COLOUR = localStorage.getItem("timerBgColour");
 
 if (TIMER_BG_COLOUR) {
-  updateScreenBgColour(CLOCK, TIMER_BG_COLOUR);
+  updateBackgroundColour(CLOCK, TIMER_BG_COLOUR);
 }
 
 // ----- Retrieve timer font colour from local storage if any ----- //
@@ -178,7 +178,7 @@ BG_EDITION_WINDOW_CLOSE_BUTTON.addEventListener("click", () => {
 let screenColour = localStorage.getItem("screenColour");
 const BODY = document.querySelector("body");
 if (screenColour) {
-  updateScreenBgColour(BODY, screenColour);
+  updateBackgroundColour(BODY, screenColour);
 }
 
 // ----- Retrieve background image from local storage if any ----- //

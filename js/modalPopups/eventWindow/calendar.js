@@ -53,14 +53,14 @@ export function displayCalendar() {
   calendar.innerHTML = "";
 
   for (let i = 1; i <= inactiveDays + daysInMonth; i++) {
-    const daySquare = document.createElement("div");
-    daySquare.classList.add("day");
+    const DAY_SQUARE = document.createElement("div");
+    DAY_SQUARE.classList.add("day");
 
     i > inactiveDays
-      ? (daySquare.innerHTML = i - inactiveDays)
-      : daySquare.classList.add("inactive");
+      ? (DAY_SQUARE.innerHTML = i - inactiveDays)
+      : DAY_SQUARE.classList.add("inactive");
 
-    calendar.append(daySquare);
+    calendar.append(DAY_SQUARE);
   }
 }
 
