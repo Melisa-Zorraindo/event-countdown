@@ -56,8 +56,14 @@ function createImageSelector(img) {
 
   let picture = document.createElement("img");
   picture.classList.add("uns-photo");
-  picture.id = img.urls.regular;
-  picture.src = img.urls.thumb;
+  const {
+    urls: { regular: backgroundSize },
+  } = img;
+  // picture.src = img.urls.thumb;
+  const {
+    urls: { thumb: thumbnail },
+  } = img;
+  picture.src = thumbnail;
   figure.append(picture);
 
   let caption = document.createElement("figcaption");
@@ -65,8 +71,8 @@ function createImageSelector(img) {
   figure.append(caption);
 
   picture.addEventListener("click", () => {
-    let bgImg = picture.id;
-    setBackgroundImage(bgImg, "backgroundImage");
+    const BG_IMG = backgroundSize;
+    setBackgroundImage(BG_IMG, "backgroundImage");
   });
 }
 
