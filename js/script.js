@@ -187,7 +187,7 @@ if (screenBackgroundImage) {
   updateBackgroundImage(screenBackgroundImage);
 }
 
-// ---------- COUNTDOWN LOGIC ---------- //
+/* // ---------- COUNTDOWN LOGIC ---------- //
 const arrivalDate = new Date("09/28/2022");
 const second = 1000;
 const minute = second * 60;
@@ -229,4 +229,4 @@ function countDown() {
   }
 }
 
-setInterval(countDown, 1000);
+setInterval(countDown, 1000); */

@@ -1,4 +1,5 @@
 let nav = 0;
+let arrivalDate;
 
 const weekdays = ["M", "T", "W", "T", "F", "S", "S"];
 
@@ -52,6 +53,7 @@ export function displayCalendar() {
   //clear calendar every time to avoid piling up months
   calendar.innerHTML = "";
 
+  //render calendar
   for (let i = 1; i <= inactiveDays + daysInMonth; i++) {
     const DAY_SQUARE = document.createElement("div");
     DAY_SQUARE.classList.add("day");
@@ -61,6 +63,20 @@ export function displayCalendar() {
       : DAY_SQUARE.classList.add("inactive");
 
     calendar.append(DAY_SQUARE);
+
+    //select a date
+    const DAYS = document.querySelectorAll(".day");
+    DAYS.forEach((day) => {
+      day.addEventListener("click", () => {
+        if (DAY_SQUARE === day) {
+          const SELECTED_DATE = `${year} ${month + 1} ${DAY_SQUARE.innerHTML}`;
+          arrivalDate = new Date(SELECTED_DATE);
+          DAY_SQUARE.classList.add("selected-day");
+        } else {
+          DAY_SQUARE.classList.remove("selected-day");
+        }
+      });
+    });
   }
 }
 
@@ -80,3 +96,48 @@ function initButtons() {
 }
 
 initButtons();
+
+// ---------- COUNTDOWN LOGIC ---------- //
+const EVENT_NAME = document.querySelector("h1");
+// const arrivalDate = new Date("09/28/2022");
+const second = 1000;
+const minute = second * 60;
+const hour = minute * 60;
+const day = hour * 24;
+
+function countDown() {
+  let today = new Date();
+  let timeSpan = arrivalDate - today;
+
+  if (timeSpan <= 0) {
+    // ----- Retrieve final message from local storage if any ----- //
+    let storedMessage = localStorage.getItem("finalMessage");
+    EVENT_NAME.innerHTML = storedMessage || "The wait is over!";
+
+    // ----- Clear timer ----- //
+    const counter = document.querySelector(".timer");
+    counter.innerHTML = " ";
+  } else {
+    const daysField = document.querySelector("#days");
+    const hoursField = document.querySelector("#hours");
+    const minutesField = document.querySelector("#minutes");
+    const secondsField = document.querySelector("#seconds");
+    const daysLeft = Math.floor(timeSpan / day);
+    const hoursLeft = Math.floor((timeSpan % day) / hour);
+    const minutesLeft = Math.floor((timeSpan % hour) / minute);
+    const secondsLeft = Math.floor((timeSpan % minute) / second);
+    daysField.innerHTML = `${daysLeft}<p>days</p>`;
+    hoursField.innerHTML =
+      hoursLeft < 10 ? `0${hoursLeft}<p>hours</p>` : `${hoursLeft}<p>hours</p>`;
+    minutesField.innerHTML =
+      minutesLeft < 10
+        ? `0${minutesLeft}<p>minutes</p>`
+        : `${minutesLeft}<p>minutes</p>`;
+    secondsField.innerHTML =
+      secondsLeft < 10
+        ? `0${secondsLeft}<p>seconds</p>`
+        : `${secondsLeft}<p>seconds</p>`;
+  }
+}
+
+setInterval(countDown, 1000);
