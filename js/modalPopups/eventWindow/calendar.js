@@ -71,6 +71,7 @@ export function displayCalendar() {
         if (DAY_SQUARE === day) {
           const SELECTED_DATE = `${year} ${month + 1} ${DAY_SQUARE.innerHTML}`;
           arrivalDate = new Date(SELECTED_DATE);
+          localStorage.setItem("arrivalDate", arrivalDate);
           DAY_SQUARE.classList.add("selected-day");
         } else {
           DAY_SQUARE.classList.remove("selected-day");
@@ -106,6 +107,12 @@ const hour = minute * 60;
 const day = hour * 24;
 
 function countDown() {
+  // ----- Retrieve arrival date from local storage if any ----- //
+  let timeIsSet = localStorage.getItem("arrivalDate", arrivalDate);
+  if (timeIsSet) {
+    arrivalDate = new Date(timeIsSet);
+  }
+
   let today = new Date();
   let timeSpan = arrivalDate - today;
 
@@ -122,10 +129,10 @@ function countDown() {
     const hoursField = document.querySelector("#hours");
     const minutesField = document.querySelector("#minutes");
     const secondsField = document.querySelector("#seconds");
-    const daysLeft = Math.floor(timeSpan / day);
-    const hoursLeft = Math.floor((timeSpan % day) / hour);
-    const minutesLeft = Math.floor((timeSpan % hour) / minute);
-    const secondsLeft = Math.floor((timeSpan % minute) / second);
+    const daysLeft = Math.floor(timeSpan / day) || "00";
+    const hoursLeft = Math.floor((timeSpan % day) / hour) || "0";
+    const minutesLeft = Math.floor((timeSpan % hour) / minute) || "0";
+    const secondsLeft = Math.floor((timeSpan % minute) / second) || "0";
     daysField.innerHTML = `${daysLeft}<p>days</p>`;
     hoursField.innerHTML =
       hoursLeft < 10 ? `0${hoursLeft}<p>hours</p>` : `${hoursLeft}<p>hours</p>`;
