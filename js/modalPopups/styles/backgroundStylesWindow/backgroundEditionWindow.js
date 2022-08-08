@@ -57,11 +57,7 @@ function createImageSelector(img) {
   let picture = document.createElement("img");
   picture.classList.add("uns-photo");
   const {
-    urls: { regular: backgroundSize },
-  } = img;
-  // picture.src = img.urls.thumb;
-  const {
-    urls: { thumb: thumbnail },
+    urls: { thumb: thumbnail, regular: backgroundSize },
   } = img;
   picture.src = thumbnail;
   figure.append(picture);
