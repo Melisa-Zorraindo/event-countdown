@@ -156,10 +156,22 @@
           </select>
         </div>
         <div class="section">
-          <div class="field" id="font-colour-event-name-picker"></div>
+          <div class="field">
+            <label
+              for="heading-font-colour-selector"
+              class="colour-picker-label"
+              >Select font colour</label
+            >
+            <input type="color" id="heading-font-colour-selector" />
+          </div>
         </div>
         <div class="section">
-          <div class="field" id="heading-bg-colour-picker"></div>
+          <div class="field">
+            <label for="heading-bg-colour-selector" class="colour-picker-label"
+              >Select background colour</label
+            >
+            <input type="color" id="heading-bg-colour-selector" />
+          </div>
         </div>
         <div class="save-btn-container">
           <button id="save-heading-preferances-button">Save</button>
@@ -208,7 +220,7 @@
           <div class="uns-photo-wrapper" id="image-picker"></div>
         </div>
         <div class="save-btn-container">
-          <button>Save</button>
+          <button id="save-background-preferances-button">Save</button>
         </div>
       </div>
     </main>
@@ -217,6 +229,10 @@
     <script src="/js/modalPopups/eventWindow/event.js" type="module"></script>
     <script
       src="/js/modalPopups/styles/headingStylesWindow/heading.js"
+      type="module"
+    ></script>
+    <script
+      src="/js/modalPopups/styles/backgroundStylesWindow/background.js"
       type="module"
     ></script>
   </body>

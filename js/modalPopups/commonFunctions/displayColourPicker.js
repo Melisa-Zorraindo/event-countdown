@@ -25,13 +25,13 @@ export function displayColourSelector(container, labelName, id) {
     const ID = colourPicker.id;
 
     switch (ID) {
-      case "heading-bg-colour-selector":
+      /*  case "heading-bg-colour-selector":
         changeBackgroundColour(EVENT_NAME, HUE, "headingBgColour");
-        break;
+        break; */
 
-      case "font-colour-selector":
+      /*  case "font-colour-selector":
         changeFontColour(EVENT_NAME, HUE, "headingFontColour");
-        break;
+        break; */
 
       case "timer-font-colour-selector":
         changeFontColour(CLOCK, HUE, "timerFontColour");
@@ -42,6 +42,7 @@ export function displayColourSelector(container, labelName, id) {
 
       case "screen-bg-colour-selector":
         changeBackgroundColour(BODY, HUE, "screenColour");
+        location.reload();
         break;
     }
   });

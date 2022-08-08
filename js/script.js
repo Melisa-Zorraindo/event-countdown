@@ -178,6 +178,7 @@ BG_EDITION_WINDOW_CLOSE_BUTTON.addEventListener("click", () => {
 let screenColour = localStorage.getItem("screenColour");
 const BODY = document.querySelector("body");
 if (screenColour) {
+  localStorage.removeItem("backgroundImage");
   updateBackgroundColour(BODY, screenColour);
 }
 
