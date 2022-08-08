@@ -34,7 +34,7 @@ export function displayCalendar() {
   //get number of days in month
   const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-  const dateString = firstDay.toLocaleDateString("en-GB", {
+  const dateString = firstDay.toLocaleDateString("en-US", {
     weekday: "narrow",
     year: "numeric",
     month: "numeric",
@@ -45,7 +45,7 @@ export function displayCalendar() {
   const inactiveDays = weekdays.indexOf(dateString.split(", ")[0]);
 
   const calendarHeader = document.querySelector("#month-display");
-  calendarHeader.innerHTML = `${dt.toLocaleDateString("en-GB", {
+  calendarHeader.innerHTML = `${dt.toLocaleDateString("en-US", {
     month: "long",
   })} ${year}`;
 
