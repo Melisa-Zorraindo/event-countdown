@@ -100,13 +100,12 @@ initButtons();
 
 // ---------- COUNTDOWN LOGIC ---------- //
 const EVENT_NAME = document.querySelector("h1");
-// const arrivalDate = new Date("09/28/2022");
 const second = 1000;
 const minute = second * 60;
 const hour = minute * 60;
 const day = hour * 24;
 
-function countDown() {
+export function countDown() {
   // ----- Retrieve arrival date from local storage if any ----- //
   let timeIsSet = localStorage.getItem("arrivalDate", arrivalDate);
   if (timeIsSet) {

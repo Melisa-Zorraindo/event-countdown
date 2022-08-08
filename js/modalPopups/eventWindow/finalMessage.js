@@ -1,10 +1,10 @@
 const finalMessage = document.querySelector("#final-message");
 
-finalMessage.addEventListener("keyup", () => {
+/* finalMessage.addEventListener("keyup", () => {
   setFinalMessage();
-});
+}); */
 
-function setFinalMessage() {
+export function setFinalMessage() {
   let newFinalMessage = finalMessage.value;
   finalMessage.innerHTML = "";
   finalMessage.innerHTML = newFinalMessage;
