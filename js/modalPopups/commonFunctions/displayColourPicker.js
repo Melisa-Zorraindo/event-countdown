@@ -25,7 +25,7 @@ export function displayColourSelector(container, labelName, id) {
     const ID = colourPicker.id;
 
     switch (ID) {
-      case "bg-colour-selector":
+      case "heading-bg-colour-selector":
         changeBackgroundColour(EVENT_NAME, HUE, "headingBgColour");
         break;
 

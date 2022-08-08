@@ -1,11 +1,10 @@
 import { displayColourSelector } from "../../commonFunctions/displayColourPicker.js";
-import { updateFont } from "./fonts.js";
 
 const HEADING_EDITION_WINDOW = document.querySelector(
   "#heading-edition-window"
 );
 
-const HEADING_BG = document.querySelector("#bg-colour-event-name-picker");
+const HEADING_BG = document.querySelector("#heading-bg-colour-picker");
 const HEADING_FONT_COLOUR = document.querySelector(
   "#font-colour-event-name-picker"
 );
@@ -27,12 +26,6 @@ export function displayTitleEditionWindow() {
   displayColourSelector(
     HEADING_BG,
     "Select background colour",
-    "bg-colour-selector"
+    "heading-bg-colour-selector"
   );
 }
-
-const FONT = document.querySelector("#font-selection");
-
-FONT.addEventListener("change", () => {
-  updateFont(FONT.value);
-});
