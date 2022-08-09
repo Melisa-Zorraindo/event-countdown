@@ -33,12 +33,12 @@ export function displayColourSelector(container, labelName, id) {
         changeFontColour(EVENT_NAME, HUE, "headingFontColour");
         break; */
 
-      case "timer-font-colour-selector":
+      /*  case "timer-font-colour-selector":
         changeFontColour(CLOCK, HUE, "timerFontColour");
-        break;
+        break; */
 
-      case "timer-bg-colour-selector":
-        changeBackgroundColour(CLOCK, HUE, "timerBgColour");
+      /*    case "timer-bg-colour-selector":
+        changeBackgroundColour(CLOCK, HUE, "timerBgColour"); */
 
       case "screen-bg-colour-selector":
         changeBackgroundColour(BODY, HUE, "screenColour");

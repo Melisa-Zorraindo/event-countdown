@@ -185,13 +185,23 @@
           </button>
         </div>
         <div class="section">
-          <div class="field" id="timer-font-colour-picker"></div>
+          <div class="field">
+            <label for="timer-font-colour-selector" class="colour-picker-label"
+              >Select font colour</label
+            >
+            <input type="color" id="timer-font-colour-selector" />
+          </div>
         </div>
         <div class="section">
-          <div class="field" id="timer-bg-colour-picker"></div>
+          <div class="field">
+            <label for="timer-bg-colour-selector" class="colour-picker-label"
+              >Select background colour</label
+            >
+            <input type="color" id="timer-bg-colour-selector" />
+          </div>
         </div>
         <div class="save-btn-container">
-          <button>Save</button>
+          <button id="save-timer-preferances-button">Save</button>
         </div>
       </div>
       <div
@@ -233,6 +243,10 @@
     ></script>
     <script
       src="/js/modalPopups/styles/backgroundStylesWindow/background.js"
+      type="module"
+    ></script>
+    <script
+      src="/js/modalPopups/styles/countdownStylesWindow/timer.js"
       type="module"
     ></script>
   </body>
