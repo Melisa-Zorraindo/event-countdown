@@ -18,10 +18,10 @@ const TIMER_BG_COLOUR_PICKER = document.querySelector(
 );
 
 TIMER_SAVE_BUTTON.addEventListener("click", () => {
-  //save heading background colour
+  //save timer background colour
   const TIMER_BG_COLOUR = TIMER_BG_COLOUR_PICKER.value;
   changeBackgroundColour(CLOCK, TIMER_BG_COLOUR, "timerBgColour");
-  //save font colour
+  //save timer font colour
   const TIMER_FONT_COLOUR = TIMER_FONT_COLOUR_PICKER.value;
   changeFontColour(CLOCK, TIMER_FONT_COLOUR, "timerFontColour");
   //hide modal window

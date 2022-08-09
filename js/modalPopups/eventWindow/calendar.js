@@ -35,6 +35,7 @@ export function displayCalendar() {
   //get number of days in month
   const daysInMonth = new Date(year, month + 1, 0).getDate();
 
+  //find offset days to render empty squares
   const dateString = firstDay.toLocaleDateString("en-US", {
     weekday: "narrow",
     year: "numeric",
@@ -42,18 +43,18 @@ export function displayCalendar() {
     day: "numeric",
   });
 
-  //find offset days to render empty squares
   const inactiveDays = weekdays.indexOf(dateString.split(", ")[0]);
 
+  //render month and year
   const calendarHeader = document.querySelector("#month-display");
   calendarHeader.innerHTML = `${dt.toLocaleDateString("en-US", {
     month: "long",
   })} ${year}`;
 
-  //clear calendar every time to avoid piling up months
+  //clear calendar container to avoid piling up months
   calendar.innerHTML = "";
 
-  //render calendar
+  //render calendar contents
   for (let i = 1; i <= inactiveDays + daysInMonth; i++) {
     const DAY_SQUARE = document.createElement("div");
     DAY_SQUARE.classList.add("day");
