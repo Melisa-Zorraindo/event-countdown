@@ -24,7 +24,8 @@ export function displayColourSelector(container, labelName, id) {
     const HUE = colourPicker.value;
     const ID = colourPicker.id;
 
-    switch (ID) {
+    switch (
+      ID
       /*  case "heading-bg-colour-selector":
         changeBackgroundColour(EVENT_NAME, HUE, "headingBgColour");
         break; */
@@ -40,10 +41,11 @@ export function displayColourSelector(container, labelName, id) {
       /*    case "timer-bg-colour-selector":
         changeBackgroundColour(CLOCK, HUE, "timerBgColour"); */
 
-      case "screen-bg-colour-selector":
+      /*     case "screen-bg-colour-selector":
         changeBackgroundColour(BODY, HUE, "screenColour");
         location.reload();
-        break;
+        break; */
+    ) {
     }
   });
 }

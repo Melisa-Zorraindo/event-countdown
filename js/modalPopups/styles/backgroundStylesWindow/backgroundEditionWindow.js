@@ -16,13 +16,13 @@ export function displayBackgroundEditionWindow() {
   //display window
   BG_EDITION_WINDOW.classList.remove("hidden");
 
-  //create bg colour picker
+  /*   //create bg colour picker
   BG_COLOUR.innerHTML = "";
   displayColourSelector(
     BG_COLOUR,
     "Select background colour",
     "screen-bg-colour-selector"
-  );
+  ); */
 
   // createPhotoSelector
   PHOTO_CONTAINER.innerHTML = "";

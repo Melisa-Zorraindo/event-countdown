@@ -174,13 +174,13 @@ BG_EDITION_WINDOW_CLOSE_BUTTON.addEventListener("click", () => {
   closeModal(BG_EDITION_WINDOW);
 });
 
-// ----- Retrieve background colour from local storage if any ----- //
+/* // ----- Retrieve background colour from local storage if any ----- //
 let screenColour = localStorage.getItem("screenColour");
 const BODY = document.querySelector("body");
 if (screenColour) {
-  localStorage.removeItem("backgroundImage");
+  // localStorage.removeItem("backgroundImage");
   updateBackgroundColour(BODY, screenColour);
-}
+} */
 
 // ----- Retrieve background image from local storage if any ----- //
 let screenBackgroundImage = localStorage.getItem("backgroundImage");
