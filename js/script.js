@@ -8,25 +8,6 @@ import { displayTimerEditionWindow } from "./modalPopups/styles/countdownStylesW
 import { displayBackgroundEditionWindow } from "./modalPopups/styles/backgroundStylesWindow/backgroundEditionWindow.js";
 import { updateBackgroundImage } from "./modalPopups/styles/backgroundStylesWindow/backgroundEditionWindow.js";
 
-// ---------- SET THEME ---------- //
-const modeContainer = document.querySelector("#themes-button");
-const darkModeIcon = document.querySelector(".fa-moon");
-const lightModeIcon = document.querySelector(".fa-sun");
-
-// ----- Save theme to local storage ----- //
-let darkMode = localStorage.getItem("darkMode");
-if (darkMode === "enabled") {
-  enableDarkMode(lightModeIcon, darkModeIcon);
-}
-
-// ----- Switch themes ----- //
-modeContainer.addEventListener("click", () => {
-  darkMode = localStorage.getItem("darkMode");
-  darkMode !== "enabled"
-    ? enableDarkMode(lightModeIcon, darkModeIcon)
-    : disableDarkMode(lightModeIcon, darkModeIcon);
-});
-
 // ---------- EDIT EVENT ---------- //
 const eventEditionButton = document.querySelector("#timer-edition-button");
 const calendarModal = document.querySelector("#event-edition-window");
@@ -174,16 +155,27 @@ BG_EDITION_WINDOW_CLOSE_BUTTON.addEventListener("click", () => {
   closeModal(BG_EDITION_WINDOW);
 });
 
-/* // ----- Retrieve background colour from local storage if any ----- //
-let screenColour = localStorage.getItem("screenColour");
-const BODY = document.querySelector("body");
-if (screenColour) {
-  // localStorage.removeItem("backgroundImage");
-  updateBackgroundColour(BODY, screenColour);
-} */
-
 // ----- Retrieve background image from local storage if any ----- //
 let screenBackgroundImage = localStorage.getItem("backgroundImage");
 if (screenBackgroundImage) {
   updateBackgroundImage(screenBackgroundImage);
 }
+
+// ---------- SET THEME ---------- //
+const modeContainer = document.querySelector("#themes-button");
+const darkModeIcon = document.querySelector(".fa-moon");
+const lightModeIcon = document.querySelector(".fa-sun");
+
+// ----- Save theme to local storage ----- //
+let darkMode = localStorage.getItem("darkMode");
+if (darkMode === "enabled") {
+  enableDarkMode(lightModeIcon, darkModeIcon);
+}
+
+// ----- Switch themes ----- //
+modeContainer.addEventListener("click", () => {
+  darkMode = localStorage.getItem("darkMode");
+  darkMode !== "enabled"
+    ? enableDarkMode(lightModeIcon, darkModeIcon)
+    : disableDarkMode(lightModeIcon, darkModeIcon);
+});

@@ -1,10 +1,8 @@
-import { displayColourSelector } from "../../commonFunctions/displayColourPicker.js";
 import { ACCESS_KEY } from "./apikey.js";
 import { fetchPhotos } from "./apiCall.js";
 import { setBackgroundImage } from "./selectPicture.js";
 
 const BG_EDITION_WINDOW = document.querySelector("#background-edition-window");
-const BG_COLOUR = document.querySelector("#background-colour-picker");
 const PHOTO_CONTAINER = document.querySelector("#image-picker");
 const IMAGE_SEARCH_BAR = document.querySelector("#image-selector");
 
@@ -15,14 +13,6 @@ const PHOTOS = await fetchPhotos(
 export function displayBackgroundEditionWindow() {
   //display window
   BG_EDITION_WINDOW.classList.remove("hidden");
-
-  /*   //create bg colour picker
-  BG_COLOUR.innerHTML = "";
-  displayColourSelector(
-    BG_COLOUR,
-    "Select background colour",
-    "screen-bg-colour-selector"
-  ); */
 
   // createPhotoSelector
   PHOTO_CONTAINER.innerHTML = "";
