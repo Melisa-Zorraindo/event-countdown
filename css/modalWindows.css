@@ -23,7 +23,8 @@
   border-radius: var(--radius);
 }
 
-.save-btn-container {
+.save-btn-container,
+.remove-btn-container {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
@@ -36,6 +37,13 @@
   background-color: var(--highlight-colour);
   color: var(--background-window-default);
   font: 1rem "Nunito", sans-serif;
+}
+
+.remove-btn-container button {
+  background-color: transparent;
+  font: 0.9rem "Nunito", sans-serif;
+  color: var(--highlight-colour);
+  text-decoration: underline;
 }
 
 .overlay {
