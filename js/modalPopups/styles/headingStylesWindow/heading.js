@@ -34,3 +34,29 @@ HEADING_SAVE_BUTTON.addEventListener("click", () => {
   HEADING_EDITION_WINDOW.classList.add("hidden");
   OVERLAY.classList.add("hidden");
 });
+
+const HEADING_REMOVE_BUTTON = document.querySelector(
+  "#remove-heading-preferances-button"
+);
+
+HEADING_REMOVE_BUTTON.addEventListener("click", () => {
+  //remove font
+  let font = localStorage.getItem("fonts");
+  if (font) {
+    localStorage.removeItem("fonts");
+  }
+  //remove font colour
+  let headingColour = localStorage.getItem("headingFontColour");
+  if (headingColour) {
+    localStorage.removeItem("headingFontColour");
+  }
+  //remove background colour
+  let headingBgColour = localStorage.getItem("headingBgColour");
+  if (headingBgColour) {
+    localStorage.removeItem("headingBgColour");
+  }
+  //hide modal window
+  HEADING_EDITION_WINDOW.classList.add("hidden");
+  OVERLAY.classList.add("hidden");
+  location.reload();
+});
