@@ -15,3 +15,29 @@ EVENT_SAVE_BUTTON.addEventListener("click", () => {
   EVENT_EDITION_WINDOW.classList.add("hidden");
   OVERLAY.classList.add("hidden");
 });
+
+const EVENT_REMOVE_BUTTON = document.querySelector(
+  "#remove-event-preferances-button"
+);
+
+EVENT_REMOVE_BUTTON.addEventListener("click", () => {
+  //remove event name
+  let eventTitle = localStorage.getItem("eventTitle");
+  if (eventTitle) {
+    localStorage.removeItem("eventTitle");
+  }
+  //remove selected date
+  let arrivalDate = localStorage.getItem("arrivalDate");
+  if (arrivalDate) {
+    localStorage.removeItem("arrivalDate");
+  }
+  //remove final message
+  let finalMessage = localStorage.getItem("finalMessage");
+  if (finalMessage) {
+    localStorage.removeItem("finalMessage");
+  }
+  //hide modal window
+  EVENT_EDITION_WINDOW.classList.add("hidden");
+  OVERLAY.classList.add("hidden");
+  location.reload();
+});
