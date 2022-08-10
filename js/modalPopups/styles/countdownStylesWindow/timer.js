@@ -28,3 +28,24 @@ TIMER_SAVE_BUTTON.addEventListener("click", () => {
   TIMER_EDITION_WINDOW.classList.add("hidden");
   OVERLAY.classList.add("hidden");
 });
+
+const TIMER_REMOVE_BUTTON = document.querySelector(
+  "#remove-timer-preferances-button"
+);
+
+TIMER_REMOVE_BUTTON.addEventListener("click", () => {
+  //remove font colour
+  let timerFontColour = localStorage.getItem("timerFontColour");
+  if (timerFontColour) {
+    localStorage.removeItem("timerFontColour");
+  }
+  //remove background colour
+  let timerBgColour = localStorage.getItem("timerBgColour");
+  if (timerBgColour) {
+    localStorage.removeItem("timerBgColour");
+  }
+  //hide modal window
+  TIMER_EDITION_WINDOW.classList.add("hidden");
+  OVERLAY.classList.add("hidden");
+  location.reload();
+});
