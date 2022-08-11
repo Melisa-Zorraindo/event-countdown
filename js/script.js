@@ -75,17 +75,11 @@ HEADING_EDITION_WINDOW_CLOSE_BUTTON.addEventListener("click", () => {
 
 // ----- Retrieve heading bg colour from local storage if any ----- //
 const HEADING_BG_COLOUR = localStorage.getItem("headingBgColour");
-
-if (HEADING_BG_COLOUR) {
-  updateBackgroundColour(EVENT_NAME, HEADING_BG_COLOUR);
-}
+updateBackgroundColour(EVENT_NAME, HEADING_BG_COLOUR);
 
 // ----- Retrieve heading font colour from local storage if any ----- //
 const HEADING_FONT_COLOUR = localStorage.getItem("headingFontColour");
-
-if (HEADING_FONT_COLOUR) {
-  updateFontColour(EVENT_NAME, HEADING_FONT_COLOUR);
-}
+updateFontColour(EVENT_NAME, HEADING_FONT_COLOUR);
 
 // ----- Retrieve heading font from local storage if any ----- //
 const eventDays = document.querySelector("#days");
@@ -94,13 +88,12 @@ const eventMinutes = document.querySelector("#minutes");
 const eventSeconds = document.querySelector("#seconds");
 
 let eventFonts = JSON.parse(localStorage.getItem("fonts"));
-if (eventFonts) {
-  EVENT_NAME.style.fontFamily = eventFonts;
-  eventDays.style.fontFamily = eventFonts;
-  eventHours.style.fontFamily = eventFonts;
-  eventMinutes.style.fontFamily = eventFonts;
-  eventSeconds.style.fontFamily = eventFonts;
-}
+
+EVENT_NAME.style.fontFamily = eventFonts;
+eventDays.style.fontFamily = eventFonts;
+eventHours.style.fontFamily = eventFonts;
+eventMinutes.style.fontFamily = eventFonts;
+eventSeconds.style.fontFamily = eventFonts;
 
 // ----- Open timer edition window ----- //
 const EDIT_TIMER_BUTTON = document.querySelector("#edit-timer-styles");
@@ -124,17 +117,11 @@ TIMER_EDITION_WINDOW_CLOSE_BUTTON.addEventListener("click", () => {
 // ----- Retrieve timer bg colour from local storage if any ----- //
 const CLOCK = document.querySelector("#timer");
 const TIMER_BG_COLOUR = localStorage.getItem("timerBgColour");
-
-if (TIMER_BG_COLOUR) {
-  updateBackgroundColour(CLOCK, TIMER_BG_COLOUR);
-}
+updateBackgroundColour(CLOCK, TIMER_BG_COLOUR);
 
 // ----- Retrieve timer font colour from local storage if any ----- //
 const TIMER_FONT_COLOUR = localStorage.getItem("timerFontColour");
-
-if (TIMER_FONT_COLOUR) {
-  updateFontColour(CLOCK, TIMER_FONT_COLOUR);
-}
+updateFontColour(CLOCK, TIMER_FONT_COLOUR);
 
 // ----- Open background edition window ----- //
 const EDIT_BG_BUTTON = document.querySelector("#edit-bg-styles");
@@ -157,9 +144,7 @@ BG_EDITION_WINDOW_CLOSE_BUTTON.addEventListener("click", () => {
 
 // ----- Retrieve background image from local storage if any ----- //
 let screenBackgroundImage = localStorage.getItem("backgroundImage");
-if (screenBackgroundImage) {
-  updateBackgroundImage(screenBackgroundImage);
-}
+updateBackgroundImage(screenBackgroundImage);
 
 // ---------- SET THEME ---------- //
 const modeContainer = document.querySelector("#themes-button");

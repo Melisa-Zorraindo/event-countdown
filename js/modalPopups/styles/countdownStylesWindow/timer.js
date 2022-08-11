@@ -16,34 +16,39 @@ const TIMER_FONT_COLOUR_PICKER = document.querySelector(
 const TIMER_BG_COLOUR_PICKER = document.querySelector(
   "#timer-bg-colour-selector"
 );
-const OPACITY_BUTTON = document.querySelector("#transparent");
+const TIMER_BG_OPACITY_BUTTON = document.querySelector(
+  "#timer-bg-opacity-button"
+);
 
-let isTransparent = false;
+let isTimerBgTransparent = false;
 let opacityTracker = 1;
 
-OPACITY_BUTTON.addEventListener("click", () => {
+TIMER_BG_OPACITY_BUTTON.addEventListener("click", () => {
   opacityTracker++;
   if (opacityTracker % 2 === 0) {
-    OPACITY_BUTTON.classList.add("transparency-on");
-    isTransparent = true;
+    TIMER_BG_OPACITY_BUTTON.classList.add("transparency-on");
+    isTimerBgTransparent = true;
   } else {
-    OPACITY_BUTTON.classList.remove("transparency-on");
-    isTransparent = false;
+    TIMER_BG_OPACITY_BUTTON.classList.remove("transparency-on");
+    isTimerBgTransparent = false;
   }
 });
 
 TIMER_SAVE_BUTTON.addEventListener("click", () => {
   //save timer background colour
   const TIMER_BG_COLOUR = TIMER_BG_COLOUR_PICKER.value;
-  if (!isTransparent) {
-    changeBackgroundColour(CLOCK, TIMER_BG_COLOUR, "timerBgColour");
-  }
+  !isTimerBgTransparent
+    ? changeBackgroundColour(CLOCK, TIMER_BG_COLOUR, "timerBgColour")
+    : localStorage.removeItem("timerBgColour");
+
   //save timer font colour
   const TIMER_FONT_COLOUR = TIMER_FONT_COLOUR_PICKER.value;
   changeFontColour(CLOCK, TIMER_FONT_COLOUR, "timerFontColour");
+
   //hide modal window
   TIMER_EDITION_WINDOW.classList.add("hidden");
   OVERLAY.classList.add("hidden");
+  location.reload();
 });
 
 const TIMER_REMOVE_BUTTON = document.querySelector(
