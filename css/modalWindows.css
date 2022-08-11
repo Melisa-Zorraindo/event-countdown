@@ -57,12 +57,12 @@
 
 /* ---------- Colour selection ---------- */
 
-.timer-colour-picker-wrapper {
+.colour-picker-wrapper {
   display: flex;
   gap: 2rem;
 }
 
-.timer-colour-picker-wrapper div {
+.colour-picker-wrapper div {
   font-weight: 600;
   text-decoration: underline;
   cursor: pointer;

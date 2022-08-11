@@ -1,10 +1,6 @@
 import { changeFontColour } from "../../commonFunctions/selectColours.js";
 import { changeBackgroundColour } from "../../commonFunctions/selectColours.js";
 
-const TIMER_SAVE_BUTTON = document.querySelector(
-  "#save-timer-preferances-button"
-);
-
 const CLOCK = document.querySelector("#timer");
 
 const TIMER_EDITION_WINDOW = document.querySelector("#timer-edition-window");
@@ -16,16 +12,18 @@ const TIMER_FONT_COLOUR_PICKER = document.querySelector(
 const TIMER_BG_COLOUR_PICKER = document.querySelector(
   "#timer-bg-colour-selector"
 );
+
+/* ---------- Manage background colour transparency ---------- */
 const TIMER_BG_OPACITY_BUTTON = document.querySelector(
   "#timer-bg-opacity-button"
 );
 
 let isTimerBgTransparent = false;
-let opacityTracker = 1;
+let timerBgOpacityTracker = 1;
 
 TIMER_BG_OPACITY_BUTTON.addEventListener("click", () => {
-  opacityTracker++;
-  if (opacityTracker % 2 === 0) {
+  timerBgOpacityTracker++;
+  if (timerBgOpacityTracker % 2 === 0) {
     TIMER_BG_OPACITY_BUTTON.classList.add("transparency-on");
     isTimerBgTransparent = true;
   } else {
@@ -33,6 +31,11 @@ TIMER_BG_OPACITY_BUTTON.addEventListener("click", () => {
     isTimerBgTransparent = false;
   }
 });
+
+/* ---------- Save preferances ---------- */
+const TIMER_SAVE_BUTTON = document.querySelector(
+  "#save-timer-preferances-button"
+);
 
 TIMER_SAVE_BUTTON.addEventListener("click", () => {
   //save timer background colour
@@ -51,6 +54,7 @@ TIMER_SAVE_BUTTON.addEventListener("click", () => {
   location.reload();
 });
 
+/* ---------- Clear preferances ---------- */
 const TIMER_REMOVE_BUTTON = document.querySelector(
   "#remove-timer-preferances-button"
 );
