@@ -144,7 +144,9 @@ BG_EDITION_WINDOW_CLOSE_BUTTON.addEventListener("click", () => {
 
 // ----- Retrieve background image from local storage if any ----- //
 let screenBackgroundImage = localStorage.getItem("backgroundImage");
-updateBackgroundImage(screenBackgroundImage);
+if (screenBackgroundImage) {
+  updateBackgroundImage(screenBackgroundImage);
+}
 
 // ---------- SET THEME ---------- //
 const modeContainer = document.querySelector("#themes-button");
