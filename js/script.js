@@ -166,7 +166,7 @@ const modeContainer = document.querySelector("#themes-button");
 const darkModeIcon = document.querySelector(".fa-moon");
 const lightModeIcon = document.querySelector(".fa-sun");
 
-// ----- Save theme to local storage ----- //
+// ----- Retrieve theme from local storage ----- //
 let darkMode = localStorage.getItem("darkMode");
 if (darkMode === "enabled") {
   enableDarkMode(lightModeIcon, darkModeIcon);
