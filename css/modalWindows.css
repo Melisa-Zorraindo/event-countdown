@@ -55,6 +55,8 @@
   backdrop-filter: blur(0.5rem);
 }
 
+/* ---------- Colour selection ---------- */
+
 .timer-colour-picker-wrapper {
   display: flex;
   gap: 2rem;
