@@ -16,11 +16,28 @@ const TIMER_FONT_COLOUR_PICKER = document.querySelector(
 const TIMER_BG_COLOUR_PICKER = document.querySelector(
   "#timer-bg-colour-selector"
 );
+const OPACITY_BUTTON = document.querySelector("#transparent");
+
+let isTransparent = false;
+let opacityTracker = 1;
+
+OPACITY_BUTTON.addEventListener("click", () => {
+  opacityTracker++;
+  if (opacityTracker % 2 === 0) {
+    OPACITY_BUTTON.classList.add("transparency-on");
+    isTransparent = true;
+  } else {
+    OPACITY_BUTTON.classList.remove("transparency-on");
+    isTransparent = false;
+  }
+});
 
 TIMER_SAVE_BUTTON.addEventListener("click", () => {
   //save timer background colour
   const TIMER_BG_COLOUR = TIMER_BG_COLOUR_PICKER.value;
-  changeBackgroundColour(CLOCK, TIMER_BG_COLOUR, "timerBgColour");
+  if (!isTransparent) {
+    changeBackgroundColour(CLOCK, TIMER_BG_COLOUR, "timerBgColour");
+  }
   //save timer font colour
   const TIMER_FONT_COLOUR = TIMER_FONT_COLOUR_PICKER.value;
   changeFontColour(CLOCK, TIMER_FONT_COLOUR, "timerFontColour");

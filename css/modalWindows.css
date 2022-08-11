@@ -55,6 +55,21 @@
   backdrop-filter: blur(0.5rem);
 }
 
+.timer-colour-picker-wrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+.timer-colour-picker-wrapper div {
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.transparency-on {
+  color: var(--highlight-colour);
+}
+
 /* ---------- Font selection ---------- */
 
 option[value="cursive"] {
