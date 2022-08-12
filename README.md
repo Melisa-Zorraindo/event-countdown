@@ -1,5 +1,6 @@
 # Event countdown
-/////![solar-system-quiz-banner](https://user-images.githubusercontent.com/76968122/175547611-4e8431d6-00d4-4af5-bcd8-78584997032f.jpg)
+![event-countdown-banner](https://user-images.githubusercontent.com/76968122/184145604-4ffd9af7-9b1b-4cce-8ac4-c2dcfc70075b.png)
+
 Fully customisable countdown to your next important event.
 
 ## Description
