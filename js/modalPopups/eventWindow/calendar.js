@@ -72,7 +72,15 @@ export function displayCalendar() {
         if (DAY_SQUARE === day) {
           const SELECTED_DATE = `${year} ${month + 1} ${DAY_SQUARE.innerHTML}`;
           DAY_SQUARE.classList.add("selected-day");
-          updateArrivalDate(SELECTED_DATE, DAYS);
+
+          //check selected date hasn't past
+          let thisDay = new Date();
+          let selection = new Date(SELECTED_DATE);
+          let timeCheck = selection - thisDay;
+
+          timeCheck > 0
+            ? updateArrivalDate(SELECTED_DATE, DAYS)
+            : alert("Choose a future date");
         } else {
           DAY_SQUARE.classList.remove("selected-day");
         }
@@ -81,11 +89,11 @@ export function displayCalendar() {
   }
 }
 
-function updateArrivalDate(selectedDate, array) {
-  array.forEach((day) => {
+function updateArrivalDate(selectedDate, daysArray) {
+  daysArray.forEach((day) => {
     day.classList.remove("selected-day");
   });
-  array[array.length - 1].classList.add("selected-day");
+  daysArray[daysArray.length - 1].classList.add("selected-day");
   arrivalDate = new Date(selectedDate);
   localStorage.setItem("arrivalDate", arrivalDate);
 }
