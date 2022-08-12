@@ -71,15 +71,23 @@ export function displayCalendar() {
       day.addEventListener("click", () => {
         if (DAY_SQUARE === day) {
           const SELECTED_DATE = `${year} ${month + 1} ${DAY_SQUARE.innerHTML}`;
-          arrivalDate = new Date(SELECTED_DATE);
-          localStorage.setItem("arrivalDate", arrivalDate);
           DAY_SQUARE.classList.add("selected-day");
+          updateArrivalDate(SELECTED_DATE, DAYS);
         } else {
           DAY_SQUARE.classList.remove("selected-day");
         }
       });
     });
   }
+}
+
+function updateArrivalDate(selectedDate, array) {
+  array.forEach((day) => {
+    day.classList.remove("selected-day");
+  });
+  array[array.length - 1].classList.add("selected-day");
+  arrivalDate = new Date(selectedDate);
+  localStorage.setItem("arrivalDate", arrivalDate);
 }
 
 //next previous buttons functionality
