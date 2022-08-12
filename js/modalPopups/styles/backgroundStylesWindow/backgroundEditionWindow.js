@@ -1,4 +1,5 @@
-import { ACCESS_KEY } from "./apikey.js";
+// import { ACCESS_KEY } from "./apikey.js";
+import { ACCESS_KEY } from "/home/melisazor/event-countdown-apikey/apikey.js";
 import { fetchPhotos } from "./apiCall.js";
 import { setBackgroundImage } from "./selectPicture.js";
 
