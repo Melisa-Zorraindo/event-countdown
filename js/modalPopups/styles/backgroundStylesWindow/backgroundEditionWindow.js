@@ -1,4 +1,4 @@
-import { ACCESS_KEY } from "./apikey.js";
+import { default as ACCESS_KEY } from "./apikey.js";
 import { fetchPhotos } from "./apiCall.js";
 import { setBackgroundImage } from "./selectPicture.js";
 
