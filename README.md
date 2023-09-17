@@ -9,10 +9,6 @@ I developed this event countdown to practise some JavaScript concepts I learnt d
 
 If you have any suggestions on how to improve the code or the design, don't hesitate to get in touch with me. If you want to have a go at improving the project yourself, feel free to fork the repo, but don't forget to share the final code with me so I can keep getting better!
 
-
-## [Link to live project](https://event-countdown.melisazor.com)
-
-
 ## JavaScript Concepts
 - ```external API```
 - ```JS date objects```
